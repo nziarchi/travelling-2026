@@ -1,0 +1,2139 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>NZI — Travelling 2025—2026</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --ink: #1A1A1A;
+  --ink-mid: #6E6E6E;
+  --ink-light: #B0B0B0;
+  --paper: #FFFFFF;          /* PAPIER blanc */
+  --noir: #0A0A0A;
+  --pierre: #E5DFD0;          /* PIERRE — fond pour les slots images */
+  --pierre-2: #DDD5C2;        /* PIERRE plus prononcée */
+  --hairline: rgba(26,26,26,0.18);
+  --gold: #B58E2E;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+html, body {
+  background: var(--paper);
+  font-family: 'Darker Grotesque', -apple-system, sans-serif;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 19px;
+  letter-spacing: 0.005em;
+  -webkit-font-smoothing: antialiased;
+}
+
+[contenteditable="true"]:hover { outline: 1px dashed rgba(26,26,26,0.25); outline-offset: 2px; cursor: text; }
+[contenteditable="true"]:focus { outline: 2px solid #3a7a3a; outline-offset: 2px; background: rgba(58,122,58,0.04); }
+
+/* ============ TOOLBAR ============ */
+.toolbar {
+  position: fixed; top: 16px; right: 16px; z-index: 200;
+  background: var(--noir); color: white; padding: 18px 20px;
+  font-size: 11pt; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+  display: flex; flex-direction: column; gap: 10px; max-width: 280px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+.toolbar button {
+  background: none; border: 1px solid rgba(255,255,255,0.35);
+  color: white; font-family: inherit; font-size: 10pt;
+  letter-spacing: 0.08em; padding: 9px 12px; cursor: pointer; text-transform: uppercase;
+  font-weight: 600;
+}
+.toolbar button:hover { background: rgba(255,255,255,0.1); }
+.toolbar button.primary { background: #3a7a3a; border-color: #3a7a3a; }
+.toolbar .info { font-size: 9.5pt; color: rgba(255,255,255,0.75); margin-top: 6px; line-height: 1.55; letter-spacing: 0; text-transform: none; font-weight: 400; }
+
+/* ============ COVER ============ */
+.cover {
+  background: var(--noir); color: white; min-height: 100vh;
+  padding: 6rem 8vw; display: flex; flex-direction: column; justify-content: space-between;
+}
+.cover-top {
+  display: flex; justify-content: space-between;
+  font-size: 11pt; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6); font-weight: 600;
+}
+.cover-center h1 {
+  font-size: clamp(72px, 11vw, 144px); font-weight: 300;
+  line-height: 0.88; letter-spacing: -0.035em; margin-top: 12vh;
+}
+.cover-center .subtitle {
+  font-size: clamp(18px, 1.4vw, 22px); font-weight: 400;
+  color: rgba(255,255,255,0.78); margin-top: 3rem;
+  max-width: 44rem; line-height: 1.45;
+}
+.cover-bottom {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-size: 11pt; letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); font-weight: 600;
+}
+.logo-nzi { height: clamp(32px, 4vw, 56px); width: auto; display: block; }
+.logo-mark-contact { height: 44px; width: auto; display: block; margin-bottom: 1.2rem; }
+.cover-bottom .right-info { text-align: right; line-height: 1.6; }
+
+/* ============ KICKER + OUVERTURE ============ */
+.kicker {
+  font-size: 10pt; letter-spacing: 0.26em; text-transform: uppercase;
+  color: var(--ink-mid); font-weight: 700; margin-bottom: 1.5rem;
+}
+.ouverture { padding: 8rem 8vw 6rem; max-width: 1400px; margin: 0 auto; }
+.ouverture .lead {
+  font-size: clamp(32px, 3.6vw, 48px); font-weight: 400;
+  line-height: 1.18; letter-spacing: -0.022em; max-width: 56rem;
+}
+.ouverture .lead em { font-style: normal; color: var(--ink-mid); }
+.ouverture .signature {
+  font-size: 11pt; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink-mid); font-weight: 600; margin-top: 4rem;
+}
+
+/* ============ CHAPTER ============ */
+.chapter-opener {
+  padding: 9rem 8vw 4rem; max-width: 1400px; margin: 0 auto;
+  border-top: 2pt solid var(--ink); counter-reset: project-num;
+}
+.chapter-opener h2 {
+  font-size: clamp(56px, 7vw, 104px); font-weight: 300;
+  line-height: 1; letter-spacing: -0.03em; margin-top: 1.8rem;
+}
+.chapter-opener .chapter-intro {
+  font-size: clamp(17px, 1.3vw, 21px); color: var(--ink-mid);
+  margin-top: 1.8rem; max-width: 44rem; line-height: 1.55;
+}
+
+/* ============ PROJECT ============ */
+.project {
+  padding: 7rem 0 4rem;
+  display: flex; flex-direction: column;
+  position: relative; counter-increment: project-num;
+}
+.project::before {
+  content: ""; position: absolute; top: 0; left: 8vw; right: 8vw;
+  height: 1pt; background: var(--ink); opacity: 0.3;
+}
+
+.project-header {
+  padding: 0 8vw;
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: end;
+}
+.project-num-line {
+  display: flex; align-items: baseline; gap: 1.2rem; margin-bottom: 1.2rem;
+}
+.project-num {
+  font-size: 1.2rem; font-weight: 800; letter-spacing: 0.05em; color: var(--ink);
+  margin-right: 1.2em; font-variant-numeric: tabular-nums;
+}
+.project-num::before { content: counter(project-num, decimal-leading-zero); }
+.project-num-label {
+  font-size: 10pt; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--ink-mid); font-weight: 700;
+}
+.project-title h3 {
+  font-size: clamp(40px, 5.5vw, 76px);
+  font-weight: 700; line-height: 0.95;
+  letter-spacing: -0.03em; margin-bottom: 1rem; color: var(--ink);
+}
+.project-title .program-line {
+  font-size: clamp(17px, 1.4vw, 21px);
+  color: var(--ink); font-weight: 600; line-height: 1.4;
+}
+
+/* ============ CARTOUCHE — sans fond, juste typographie ============ */
+.cartouche {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem 1.6rem;
+  border-top: 1pt solid var(--ink);
+  padding-top: 1.4rem;
+}
+.cartouche .data-item {
+  border-top: 0.5pt solid var(--hairline);
+  padding-top: 0.5rem;
+}
+.cartouche .data-item:nth-child(-n+2) { border-top: none; padding-top: 0; }
+.cartouche .label {
+  font-size: 8.5pt; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mid); font-weight: 700; display: block; margin-bottom: 0.35rem;
+}
+.cartouche .value {
+  font-size: 13pt; line-height: 1.35; color: var(--ink); font-weight: 600;
+}
+.cartouche .value-big {
+  font-size: 24pt; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: var(--ink);
+}
+.cartouche .value-big span {
+  font-size: 12pt; color: var(--ink-mid); font-weight: 600; letter-spacing: 0; display: inline;
+}
+.cartouche .data-item.full { grid-column: span 2; }
+
+/* ===== Cartouche : champs KEY (MOA/Programme/Budget/Statut) en évidence ===== */
+.cartouche .data-item.key {
+  background: rgba(26,26,26,0.045);
+  padding: 0.7rem 0.85rem;
+  border-top: none;
+}
+.cartouche .data-item.key .label {
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.24em; font-size: 8.5pt;
+}
+.cartouche .data-item.key .value {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1.05em;
+  line-height: 1.4;
+}
+.cartouche .value.missing {
+  color: #c1272d;
+  font-weight: 800;
+}
+.cartouche .value.missing::before {
+  content: "⚠ ";
+  margin-right: 0.2em;
+  font-weight: 800;
+}
+
+
+/* ============ DESCRIPTION ============ */
+.project-description {
+  padding: 0 8vw 3rem;
+  max-width: 1400px; margin: 0 auto; width: 100%;
+}
+.project-description p {
+  font-size: 13pt; line-height: 1.7; margin-bottom: 0.9rem;
+  max-width: 56rem; color: var(--ink);
+}
+
+/* ============ PRIX & DISTINCTIONS (fond pierre, badge, mise en valeur) ============ */
+.project-prize {
+  position: relative;
+  padding: 2rem 2.4rem 1.8rem;
+  margin: 0.5rem 8vw 3rem;
+  max-width: 1400px;
+  margin-left: auto; margin-right: auto;
+  background: var(--pierre);
+}
+.project-prize::before {
+  content: "★";
+  position: absolute;
+  top: -16px; left: 24px;
+  width: 32px; height: 32px;
+  background: var(--gold); color: var(--paper);
+  font-size: 14pt; line-height: 32px; text-align: center;
+  border-radius: 50%;
+}
+.project-prize .label {
+  font-size: 10pt; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--ink); font-weight: 700; display: block; margin-bottom: 0.6rem;
+}
+.project-prize .value {
+  font-size: 13pt; font-weight: 600; line-height: 1.65; color: var(--ink);
+}
+
+/* Bloc Performance (HQE / Label / Structure) — Option β v2 */
+.v3-perfo-block {
+  border: 2pt solid var(--ink);
+  background: rgba(255, 255, 255, 0.4);
+  padding: 1.2rem 1.5rem;
+  max-width: 720px;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  row-gap: 0.6rem;
+  column-gap: 1rem;
+  align-items: baseline;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+}
+.v3-perfo-key {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-mid, #6E6E6E);
+  font-weight: 800;
+}
+.v3-perfo-value {
+  font-size: 1.25rem;
+  color: var(--ink);
+  font-weight: 800;
+  line-height: 1.2;
+}
+.v3-perfo-empty {
+  color: var(--ink-mid, #6E6E6E);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* Bloc Distinctions par projet — fond noir, accent or */
+.v3-distinctions-block {
+  border: 1pt solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1rem 1.3rem;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  column-gap: 1.5rem;
+  align-items: baseline;
+  margin-bottom: 2rem;
+}
+.v3-distinctions-key {
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 800;
+}
+.v3-distinctions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.v3-dist-item {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--paper);
+}
+.v3-dist-status {
+  color: var(--gold);
+  font-weight: 800;
+  margin-right: 0.5em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 700px) {
+  .v3-perfo-block,
+  .v3-distinctions-block {
+    grid-template-columns: 1fr;
+    row-gap: 0.5rem;
+  }
+  .v3-distinctions-block { row-gap: 1rem; }
+}
+
+/* ============ IMAGES — pierre fond, cover, alignées ============ */
+.project-images-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  width: 100%;
+}
+.project-images-grid.cols-2x3 { grid-template-columns: 1fr 1fr; }   /* 6 images en 2 col × 3 lignes */
+.project-images-grid.cols-2x4 { grid-template-columns: 1fr 1fr; }   /* 8 images en 2 col × 4 lignes */
+.project-images-grid.cols-2x5 { grid-template-columns: 1fr 1fr; }   /* 10 images en 2 col × 5 lignes — Bertelotte */
+.project-images-grid.cols-2x6 { grid-template-columns: 1fr 1fr; }   /* 12 images en 2 col × 6 lignes — Nollet */
+.project-images-grid.cols-1-wide { grid-template-columns: 1fr; gap: 4px; }   /* Nuages : 2 photos très paysage empilées */
+.project-images-grid.cols-1-wide .image-slot { aspect-ratio: 21/9; }   /* format très paysage */
+.image-slot {
+  position: relative;
+  aspect-ratio: 4/3;             /* paysage par défaut */
+  background: var(--pierre);
+  overflow: hidden;
+}
+.image-slot.portrait { aspect-ratio: 3/4; }                          /* portrait au toggle */
+.image-slot.tall    { aspect-ratio: 2/3; }                           /* portrait plus marqué */
+.image-slot.square  { aspect-ratio: 1/1; }                           /* carré */
+.image-slot img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+}
+.image-slot .placeholder {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-mid);
+  font-size: 10pt; letter-spacing: 0.18em; text-transform: uppercase; text-align: center;
+  padding: 1rem;
+}
+.image-slot .slot-label {
+  position: absolute; top: 0.6rem; left: 0.6rem;
+  background: rgba(0,0,0,0.65); color: white;
+  font-size: 9pt; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 0.3rem 0.7rem; font-weight: 700; z-index: 3;
+}
+.image-slot select {
+  position: absolute; bottom: 2.6rem; left: 0.6rem; right: 0.6rem;
+  background: rgba(0,0,0,0.92); color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 0.5rem 0.7rem; font-size: 10pt;
+  font-family: inherit; cursor: pointer; z-index: 4;
+  letter-spacing: 0.04em; font-weight: 500;
+}
+.image-slot select option { background: var(--noir); color: white; }
+.image-slot .ratio-toggle {
+  position: absolute; bottom: 0.6rem; left: 0.6rem; right: 0.6rem;
+  background: rgba(0,0,0,0.92); color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 0.5rem 0.7rem; font-size: 9pt;
+  font-family: inherit; cursor: pointer; z-index: 4;
+  letter-spacing: 0.06em; font-weight: 600;
+  text-transform: uppercase;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.image-slot .ratio-toggle:hover { background: rgba(0,0,0,1); }
+.image-slot .ratio-toggle .current { color: rgba(255,255,255,0.7); font-weight: 400; }
+
+/* ============ CONTREFORTS ============ */
+.contreforts { background: var(--noir); color: white; padding: 8rem 8vw; margin-top: 4rem; }
+.contreforts-inner { max-width: 1400px; margin: 0 auto; }
+.contreforts h2 {
+  font-size: clamp(48px, 6vw, 88px); font-weight: 300; line-height: 1;
+  letter-spacing: -0.03em; margin-bottom: 3.5rem; color: white;
+}
+.contreforts .kicker { color: rgba(255,255,255,0.55); font-weight: 700; }
+.events-hero {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  padding-bottom: 4rem; margin-bottom: 4rem;
+  border-bottom: 0.5pt solid rgba(255,255,255,0.2);
+}
+.events-group h3 {
+  font-size: 11pt; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6); font-weight: 700; margin-bottom: 1.8rem;
+}
+.events-group ul { list-style: none; }
+.events-group li {
+  font-size: clamp(17px, 1.4vw, 21px); line-height: 1.45; color: white;
+  font-weight: 500; letter-spacing: -0.005em; padding: 1rem 0;
+  border-top: 0.5pt solid rgba(255,255,255,0.18);
+}
+.events-group li:first-child { border-top: none; padding-top: 0; }
+.events-group li .meta {
+  display: block; font-size: 10pt; color: rgba(255,255,255,0.55);
+  margin-top: 0.35rem; letter-spacing: 0.06em; font-weight: 400;
+}
+.events-group li strong { font-weight: 700; color: white; }
+
+/* ============ CONTACT ============ */
+.contact-block { padding: 8rem 8vw; max-width: 1400px; margin: 0 auto; }
+.contact-block h2 {
+  font-size: clamp(64px, 8vw, 124px); font-weight: 300;
+  line-height: 0.92; letter-spacing: -0.032em; margin-bottom: 4rem;
+}
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3rem; }
+.contact-cell .label {
+  font-size: 9pt; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--ink-mid); font-weight: 700; margin-bottom: 0.8rem; display: block;
+}
+.contact-cell .name {
+  font-size: 19pt; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.5rem;
+}
+.contact-cell .coord { font-size: 12pt; line-height: 1.7; color: var(--ink); font-weight: 500; }
+.contact-cell a { color: var(--ink); text-decoration: none; border-bottom: 0.5pt solid var(--ink-light); font-weight: 600; }
+.contact-footer {
+  margin-top: 6rem; padding-top: 1.5rem; border-top: 0.5pt solid var(--ink);
+  display: flex; justify-content: space-between;
+  font-size: 10pt; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-mid); font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .project-header { grid-template-columns: 1fr; gap: 2rem; }
+  .project-images-grid, .project-images-grid.cols-3 { grid-template-columns: 1fr; }
+  .events-hero { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ============ RECONNAISSANCES PAGE ============ */
+.reconnaissances-page {
+  padding: 10rem 8vw 8rem;
+  background: var(--paper);
+  border-top: 2pt solid var(--ink);
+}
+.reco-kicker {
+  font-size: 9pt; letter-spacing: 0.32em; text-transform: uppercase;
+  font-weight: 700; color: var(--ink-mid); margin-bottom: 5rem;
+}
+.reco-group { margin-bottom: 5rem; }
+.reco-project-name {
+  font-size: clamp(4rem, 14vw, 12rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 1.6rem 0;
+}
+.reco-list {
+  list-style: none; margin: 0; padding: 0;
+  border-top: 0.5pt solid var(--hairline);
+  padding-top: 1rem;
+}
+.reco-list li {
+  font-size: clamp(13px, 1.1vw, 15px);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.7;
+  padding: 0.35rem 0;
+  border-bottom: 0.5pt solid var(--hairline);
+}
+.reco-list .prize-status {
+  font-weight: 700;
+  color: var(--ink-mid);
+  font-size: 9pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-left: 0.5em;
+}
+.reco-agence-name {
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 1.6rem 0;
+}
+@media (max-width: 600px) {
+  .reconnaissances-page { padding: 6rem 6vw 5rem; }
+}
+
+/* ============ DISTINCTIONS ============ */
+.distinctions { padding: 7rem 8vw 5rem; max-width: 1400px; margin: 0 auto; border-top: 2pt solid var(--ink); }
+.distinctions-inner { width: 100%; }
+.distinctions h2 {
+  font-size: clamp(48px, 6vw, 88px); font-weight: 300; line-height: 1;
+  letter-spacing: -0.03em; margin-top: 1.6rem; margin-bottom: 1.4rem;
+}
+.distinctions-intro {
+  font-size: clamp(17px, 1.3vw, 21px); color: var(--ink-mid);
+  max-width: 44rem; line-height: 1.55; margin-bottom: 3.5rem;
+}
+.distinctions-group { margin-bottom: 3rem; }
+.distinctions-group h3 {
+  font-size: 11pt; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--ink-mid); font-weight: 700; margin-bottom: 1.6rem;
+  padding-bottom: 0.8rem; border-bottom: 0.5pt solid var(--hairline);
+}
+.distinctions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem 2.4rem;
+}
+.distinction {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.2rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 0.5pt solid var(--hairline);
+}
+.distinctions-grid > .distinction:nth-child(-n+2) { border-top: none; padding-top: 0.5rem; }
+.prize-logo {
+  height: 56px; width: 80px;
+  object-fit: contain; object-position: left center;
+  display: block;
+}
+.prize-logo-placeholder {
+  height: 56px; width: 80px;
+  border-left: 2pt solid var(--ink); opacity: 0.4;
+}
+.prize-info { display: flex; flex-direction: column; gap: 0.15rem; }
+.prize-year {
+  font-size: 10pt; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mid); font-weight: 700;
+}
+.prize-name {
+  font-size: 14pt; font-weight: 700; line-height: 1.25;
+  letter-spacing: -0.005em; color: var(--ink);
+}
+.prize-project {
+  font-size: 11pt; color: var(--ink-mid); font-weight: 500; line-height: 1.4;
+}
+@media (max-width: 900px) {
+  .distinctions-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .distinction { grid-template-columns: 64px 1fr; gap: 1rem; }
+  .prize-logo, .prize-logo-placeholder { height: 44px; width: 64px; }
+}
+
+/* ============ EVENTS — pivot marker ============ */
+.events-group li.event-pivot {
+  background: rgba(255,255,255,0.04);
+  padding-left: 0.8rem;
+  margin-left: -0.8rem;
+  border-left: 2pt solid var(--gold);
+}
+.events-group li.event-pivot strong::after {
+  content: " \2605";
+  color: var(--gold);
+  font-weight: 700;
+  margin-left: 0.3rem;
+}
+
+/* ============== V3 — layouts adaptatifs + sélecteurs ============== */
+.v3-project-grid { margin: 0; padding: 0; }
+.v3-hero, .v3-slot {
+  display: block; position: relative; overflow: hidden;
+  background: #f5f3ef; margin: 0;
+}
+.v3-hero {
+  width: 100%; aspect-ratio: 16/9; margin-bottom: 12px;
+}
+.v3-row {
+  display: grid; gap: 12px; margin-bottom: 12px;
+}
+.v3-row-2 { grid-template-columns: 1fr 1fr; }
+.v3-row-3 { grid-template-columns: 1fr 1fr 1fr; }
+.v3-row-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .v3-row-5 { grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+.v3-row-double {
+  display: grid; gap: 12px; margin-bottom: 12px;
+  grid-template-columns: 1fr 1fr;
+}
+.v3-row-double .v3-hero {
+  aspect-ratio: 3/2; margin: 0;
+}
+.v3-slot.v3-slot-43 { aspect-ratio: 4/3; }
+.v3-slot.v3-slot-11 { aspect-ratio: 1/1; }
+.v3-slot.v3-slot-pano { aspect-ratio: 21/9; margin-bottom: 12px; }
+.v3-hero.v3-hero-pano { aspect-ratio: 2/1; }
+.v3-hero.v3-hero-43 { aspect-ratio: 4/3; }
+.v3-row-double.v3-row-pano .v3-hero { aspect-ratio: 2/1; }
+
+.v3-open, .v3-chosen-link {
+  display: block; width: 100%; height: 100%; text-decoration: none;
+}
+.v3-open img, .v3-chosen-img {
+  width: 100%; height: 100%; object-fit: cover; display: block; cursor: zoom-in;
+}
+.v3-close-link { display: none; }
+
+/* Sélecteur : placeholder */
+
+/* Lightbox via :target */
+.v3-hero:target, .v3-slot:target {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw; height: 100vh;
+  margin: 0; padding: 4vh;
+  background: rgba(0,0,0,0.92);
+  z-index: 1000;
+  aspect-ratio: auto;
+  overflow: visible;
+  display: flex; align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+.v3-hero:target .v3-open, .v3-slot:target .v3-open,
+.v3-hero:target .v3-chosen-link, .v3-slot:target .v3-chosen-link {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center; z-index: 0;
+}
+.v3-hero:target .v3-open img, .v3-slot:target .v3-open img,
+.v3-hero:target .v3-chosen-img, .v3-slot:target .v3-chosen-img {
+  max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;
+  cursor: zoom-out;
+}
+.v3-hero:target .v3-close-link, .v3-slot:target .v3-close-link {
+  display: block; position: absolute;
+  top: 2vh; right: 2vh;
+  color: #fff; font-size: 36px; font-weight: 200;
+  line-height: 1; text-decoration: none;
+  z-index: 1001; width: 44px; height: 44px; text-align: center;
+}
+/* Quand sélecteur en target, ne pas montrer placeholder */
+
+/* Galerie overlay */
+
+/* Toolbar V3 */
+
+@media (max-width: 600px) {
+  .v3-hero:target, .v3-slot:target { padding: 2vh; }
+  
+}
+
+
+/* === V5 FINAL — modifications A3-β + cover noire + distinctions réduites === */
+.v5-cover {
+  position: relative;
+  overflow: hidden;
+  min-height: 92vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 4vh 6vw;
+  background: #1A1A1A;
+  color: #F5F3EF;
+  margin: 0;
+}
+.v5-cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.v5-cover-title { align-self: end; margin-top: auto; }
+.v5-cover-kicker {
+  font-size: 0.95rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+.v5-cover-h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+  color: #F5F3EF;
+}
+.v5-cover-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.85;
+  max-width: 720px;
+  font-weight: 500;
+  color: #F5F3EF;
+}
+.v5-cover-bottom {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+.v5-cover-arrow { font-size: 2rem; line-height: 1; color: var(--gold); }
+
+
+
+
+/* ============ TOC NAV ============ */
+.toc-nav {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 300;
+  font-family: 'Darker Grotesque', sans-serif;
+}
+.toc-toggle {
+  width: 44px; height: 44px;
+  background: var(--ink);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transition: opacity 0.15s;
+}
+.toc-toggle:hover { opacity: 0.75; }
+.toc-panel {
+  display: none;
+  position: absolute;
+  bottom: 52px;
+  right: 0;
+  background: var(--ink);
+  color: white;
+  width: 300px;
+  max-height: 72vh;
+  overflow-y: auto;
+  padding: 1.4rem 1.6rem;
+  box-shadow: -4px -4px 24px rgba(0,0,0,0.3);
+}
+.toc-nav.open .toc-panel { display: block; }
+.toc-panel-header {
+  font-size: 8.5pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 0.5pt solid rgba(255,255,255,0.15);
+}
+.toc-list { list-style: none; }
+.toc-chapter > a {
+  display: block;
+  padding: 0.55rem 0 0.2rem;
+  color: white;
+  text-decoration: none;
+  font-size: 11pt;
+  font-weight: 700;
+  border-top: 0.5pt solid rgba(255,255,255,0.12);
+  transition: color 0.12s;
+}
+.toc-chapter:first-child > a { border-top: none; }
+.toc-chapter > a:hover { color: var(--gold); }
+.toc-projects { padding: 0 0 0.5rem 0.9rem; list-style: none; }
+.toc-projects a {
+  display: block;
+  padding: 0.2rem 0;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 10.5pt;
+  font-weight: 400;
+  transition: color 0.12s;
+}
+.toc-projects a:hover { color: white; }
+@media (max-width: 600px) {
+  .toc-nav { bottom: 16px; right: 16px; }
+  .toc-panel { width: calc(100vw - 48px); }
+}
+
+/* ============ COVER AVEC PHOTO + ANIMATIONS ============ */
+/* v2char : apparition lettre par lettre */
+.v5-cover-h1 .v2-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(80px) skewX(-3deg);
+  animation: v2char 0.45s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay: calc(0.03s * var(--ci) + 0.25s);
+}
+.v5-cover-h1 .v2-sp { display: inline-block; width: 0.28em; }
+@keyframes v2char { to { opacity: 1; transform: none; } }
+
+/* Parallax images */
+.image-slot img, .v3-slot img, .v3-hero img {
+  will-change: transform;
+  transform: scale(1.09) translateY(0px);
+}
+
+/* Cover layout avec photo */
+.v5-cover {
+  position: relative;
+  background: #080808;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 8vw 8vh;
+  overflow: hidden;
+}
+.cover-hero {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.cover-hero img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  display: block;
+}
+.cover-hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to top,
+      rgba(6,6,6,0.96) 0%,
+      rgba(6,6,6,0.70) 35%,
+      rgba(6,6,6,0.22) 65%,
+      rgba(6,6,6,0.08) 100%),
+    linear-gradient(to right,
+      rgba(6,6,6,0.45) 0%,
+      transparent 60%);
+}
+/* Bande NZI en haut (injectée par JS) */
+.cover-eyebrow {
+  position: absolute;
+  top: 5vh; left: 8vw; right: 8vw;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cover-eyebrow-brand {
+  font-size: 0.62rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: rgba(255,255,255,0.9);
+}
+.cover-eyebrow-year {
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255,255,255,0.4);
+}
+/* Tout le contenu au-dessus de l'overlay */
+.v5-cover > *:not(.cover-hero) { position: relative; z-index: 2; }
+/* Kicker */
+.v5-cover-kicker {
+  color: var(--gold);
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+/* Titre sur fond sombre */
+.v5-cover-h1 {
+  font-weight: 400;
+  color: #FFFFFF;
+  letter-spacing: -0.04em;
+  line-height: 0.86;
+  overflow: visible;
+}
+/* Trait or animé sous le titre */
+.v5-cover-h1::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  margin-top: 2rem;
+  animation: coverLine 0.7s cubic-bezier(0.16,1,0.3,1) 0.9s forwards;
+}
+@keyframes coverLine { to { width: 10rem; } }
+.v5-cover-subtitle {
+  font-size: clamp(14px, 1.45vw, 19px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.88);
+  max-width: 54ch;
+  line-height: 1.65;
+  margin-top: 1.8rem;
+  letter-spacing: 0.01em;
+}
+.v5-cover-top { margin-bottom: 2vh; }
+.v5-cover-arrow { color: var(--gold); }
+
+/* P1 — Fermeture lightbox (overlay JS) */
+.js-lb-close {
+  display: none; align-items: center; justify-content: center;
+  position: fixed; top: 2vh; right: 2vh; z-index: 1100;
+  width: 48px; height: 48px;
+  background: rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: 50%; color: #fff;
+  font-size: 26px; font-weight: 200; cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+}
+.js-lb-close:hover { background: rgba(255,255,255,0.32); border-color: rgba(255,255,255,0.6); }
+.js-lb-close.visible { display: flex; }
+
+/* P5 — Impression */
+@media print {
+  * { animation: none !important; transition: none !important; }
+  .toc-nav, .cover-hero, .v5-cover-hero { display: none !important; }
+  .chapter-opener { page-break-before: always; break-before: page; }
+  .project { page-break-inside: avoid; break-inside: avoid; }
+  .v3-hero, .v3-slot { position: relative !important; }
+  .v3-project-grid { display: block; }
+  a[href]::after { content: none; }
+}
+
+/* === Méthode (séquence schémas Nollet/Bertelotte/Coquibus) === */
+.transformation-method {
+  margin: 4.5rem auto 4rem;
+  max-width: 1100px;
+  padding: 0 8vw;
+}
+.tm-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1pt solid var(--ink);
+  padding-bottom: 0.7rem; margin-bottom: 1.8rem;
+  gap: 2rem; flex-wrap: wrap;
+}
+.tm-label {
+  font-size: 9pt; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--ink); font-weight: 700;
+}
+.tm-steps {
+  font-size: 9pt; letter-spacing: 0.15em; color: var(--mid);
+  text-transform: uppercase;
+}
+.tm-content { display: flex; justify-content: center; }
+.tm-content img { max-width: 100%; height: auto; display: block; }
+
+/* === Diptyque aérien avant/après === */
+.aerial-diptych { margin: 5rem 0 0; }
+.ad-pair {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+}
+.ad-frame { position: relative; overflow: hidden; }
+.ad-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  aspect-ratio: 4/3;
+}
+.ad-marker {
+  position: absolute; top: 18px; left: 18px;
+  background: var(--ink); color: var(--paper);
+  padding: 7px 16px;
+  font-size: 9pt; letter-spacing: 0.28em;
+  text-transform: uppercase; font-weight: 600;
+}
+.aerial-diptych figcaption {
+  max-width: 1100px;
+  margin: 1.4rem auto 0;
+  padding: 0 8vw;
+  font-size: 11pt; line-height: 1.6;
+  color: var(--mid);
+}
+.aerial-diptych figcaption em {
+  color: var(--light); font-style: italic;
+}
+
+@media print {
+  .transformation-method, .aerial-diptych { page-break-inside: avoid; break-inside: avoid; }
+  .ad-pair { gap: 4px; }
+}
+
+@media (max-width: 700px) {
+  .ad-pair { grid-template-columns: 1fr; }
+  .tm-head { flex-direction: column; gap: 0.4rem; align-items: flex-start; }
+}
+
+/* Nollet — callback photo de couverture */
+.cover-callback {
+  display: inline-block; margin-top: 0.5rem;
+  font-size: 8.5pt; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--gold); font-weight: 700;
+  padding-left: 1.2em; position: relative;
+}
+.cover-callback::before {
+  content: "↑"; position: absolute; left: 0;
+  font-size: 10pt;
+}
+
+/* ============ RECONNAISSANCES — brutalist typographic page ============ */
+.reconnaissances {
+  background: var(--paper);
+  padding: 12vh 7vw 14vh;
+  page-break-before: always;
+  break-before: page;
+}
+.reco-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1pt solid var(--ink);
+  padding-bottom: 1.4rem; margin-bottom: 9rem;
+  gap: 2rem; flex-wrap: wrap;
+}
+.reco-title {
+  font-family: inherit; margin: 0;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  font-weight: 800; letter-spacing: 0.05em;
+  text-transform: uppercase; line-height: 1;
+}
+.reco-meta {
+  font-size: 9pt; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--mid);
+}
+.reco-block {
+  margin-bottom: 10rem; page-break-inside: avoid; break-inside: avoid;
+}
+.reco-block:last-child { margin-bottom: 0; }
+.reco-block-name {
+  font-size: clamp(4.5rem, 14vw, 11rem);
+  font-weight: 800; letter-spacing: -0.035em; line-height: 0.85;
+  text-transform: uppercase; margin: 0; color: var(--ink);
+  word-break: keep-all;
+}
+.reco-block-sub {
+  font-size: 10pt; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--mid);
+  margin: 1.8rem 0 0; padding-top: 1.2rem;
+  border-top: 1pt solid var(--ink);
+}
+.reco-list {
+  list-style: none; padding: 0;
+  margin: 2.4rem 0 0; max-width: 980px;
+}
+.reco-item {
+  display: grid; grid-template-columns: 4.2rem 1fr auto; gap: 2rem;
+  padding: 1rem 0; border-bottom: 1px solid var(--subtle);
+  font-size: 11pt; align-items: baseline;
+}
+.reco-item:last-child { border-bottom: 0; }
+.reco-year {
+  font-weight: 700; letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.reco-prize { color: var(--ink); }
+.reco-prize .org {
+  color: var(--mid); font-style: italic;
+  font-size: 0.92em; margin-left: 0.3rem;
+}
+.reco-status {
+  font-size: 9pt; letter-spacing: 0.24em;
+  text-transform: uppercase; font-weight: 600;
+  white-space: nowrap; color: var(--mid);
+}
+.reco-status.is-laureat {
+  color: var(--ink); font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .reconnaissances { padding: 8vh 6vw 10vh; }
+  .reco-block { margin-bottom: 6rem; }
+  .reco-block-name { font-size: clamp(3rem, 17vw, 6rem); }
+  .reco-item { grid-template-columns: 3.4rem 1fr; gap: 1rem; }
+  .reco-status { grid-column: 2; padding-top: 0.2rem; }
+}
+
+
+/* ============ CONFERENCE-SERIES — photos curatées par projet ============ */
+.conference-series {
+  margin: 5rem 0 0;
+  padding: 0 4vw;
+  page-break-before: auto;
+}
+.cs-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-top: 1pt solid var(--ink);
+  padding-top: 1.1rem; margin-bottom: 2rem;
+  gap: 1.5rem; flex-wrap: wrap;
+}
+.cs-kicker {
+  font-size: 9pt; letter-spacing: 0.28em;
+  text-transform: uppercase; font-weight: 700; color: var(--ink);
+}
+.cs-credit {
+  font-size: 8.5pt; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--mid);
+}
+.cs-grid {
+  display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px;
+}
+.cs-cell { overflow: hidden; margin: 0; }
+.cs-cell img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.cs-hero { grid-column: span 12; aspect-ratio: 16/9; }
+.cs-two-thirds { grid-column: span 8; aspect-ratio: 4/3; }
+.cs-half { grid-column: span 6; aspect-ratio: 4/3; }
+.cs-third { grid-column: span 4; aspect-ratio: 1/1; }
+
+@media (max-width: 760px) {
+  .conference-series { padding: 0 5vw; }
+  .cs-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+  .cs-hero, .cs-two-thirds, .cs-half, .cs-third { grid-column: span 2; aspect-ratio: 3/2; }
+}
+@media print {
+  .conference-series { page-break-inside: avoid; break-inside: avoid; }
+}
+
+
+/* ============ RÉCIT — narrative de conférence brutalisé ============ */
+.recit {
+  margin: 6rem 0 0; padding: 6vh 4vw 4vh;
+  background: var(--paper); border-top: 1pt solid var(--ink);
+}
+.recit-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.2rem; margin-bottom: 4rem;
+  border-bottom: 1pt solid var(--ink);
+  gap: 2rem; flex-wrap: wrap;
+}
+.recit-title {
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 800; letter-spacing: -0.035em;
+  line-height: 0.85; text-transform: uppercase;
+  margin: 0; color: var(--ink);
+}
+.recit-meta {
+  font-size: 9pt; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--mid);
+}
+.recit-body { max-width: 820px; margin: 0 auto; }
+.recit-beat {
+  display: grid; grid-template-columns: 4rem 1fr;
+  gap: 2.5rem; margin-bottom: 3.2rem; align-items: baseline;
+}
+.recit-num {
+  font-size: 12pt; letter-spacing: 0.05em;
+  font-weight: 800; color: var(--ink);
+  text-align: right; padding-top: 0.4rem;
+  font-variant-numeric: tabular-nums;
+}
+.recit-h3 {
+  font-size: 10pt; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--ink);
+  font-weight: 700; margin: 0 0 0.9rem; padding: 0;
+}
+.recit-quote {
+  font-size: 14pt; line-height: 1.55;
+  font-weight: 400; color: var(--ink);
+  margin: 0; font-style: normal;
+}
+.recit-signature {
+  text-align: right; margin: 4rem auto 0;
+  padding-top: 1.5rem; border-top: 1pt solid var(--subtle);
+  max-width: 820px;
+  font-size: 10pt; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--mid);
+}
+@media (max-width: 700px) {
+  .recit-title { font-size: clamp(3rem, 16vw, 5rem); }
+  .recit-beat { grid-template-columns: 2.5rem 1fr; gap: 1.2rem; }
+  .recit-quote { font-size: 12pt; }
+}
+@media print {
+  .recit { page-break-inside: avoid; }
+  .recit-beat { page-break-inside: avoid; }
+}
+
+
+/* ===== Reconnaissances v2 — prix protagonistes, projets à côté ===== */
+.reco-section { margin-bottom: 7rem; }
+.reco-section:last-of-type { margin-bottom: 0; }
+.reco-section-title {
+  font-size: clamp(3rem, 9vw, 7rem);
+  font-weight: 800; letter-spacing: -0.025em;
+  line-height: 0.88; text-transform: uppercase;
+  margin: 0 0 3.5rem; color: var(--ink);
+}
+.reco-subsection { margin-top: 3.5rem; }
+.reco-subsection:first-of-type { margin-top: 0; }
+.reco-subsection-title {
+  font-size: 10pt; font-weight: 800;
+  letter-spacing: 0.34em; text-transform: uppercase;
+  color: var(--ink); margin: 0 0 1.6rem;
+  padding-bottom: 0.7rem; border-bottom: 1pt solid var(--ink);
+}
+.reco-list { list-style: none; padding: 0; margin: 0; }
+.reco-row {
+  display: grid; grid-template-columns: 4rem 1fr auto;
+  gap: 2rem; padding: 1.4rem 0;
+  border-bottom: 1px solid var(--subtle);
+  align-items: baseline;
+}
+.reco-row:last-child { border-bottom: 0; }
+.reco-row .reco-year {
+  font-weight: 700; letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums; color: var(--ink);
+}
+.reco-main { min-width: 0; }
+.reco-row .reco-prize {
+  display: block;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 800; letter-spacing: 0.012em;
+  text-transform: uppercase;
+  color: var(--ink); line-height: 1.18;
+  background: none; padding: 0;
+}
+.reco-row .reco-project {
+  display: block; margin-top: 0.45rem;
+  font-size: 10pt; color: var(--mid);
+  font-style: italic; letter-spacing: 0.01em;
+}
+.reco-row .reco-status {
+  font-size: 9pt; letter-spacing: 0.24em;
+  text-transform: uppercase; font-weight: 600;
+  white-space: nowrap; color: var(--mid);
+  padding-top: 0.15rem;
+}
+.reco-row .reco-status.is-laureat {
+  color: var(--ink); font-weight: 800;
+}
+@media (max-width: 760px) {
+  .reco-section-title { font-size: clamp(2.2rem, 12vw, 4rem); margin-bottom: 2rem; }
+  .reco-row { grid-template-columns: 3rem 1fr; gap: 1rem; }
+  .reco-row .reco-status { grid-column: 2; padding-top: 0.3rem; }
+}
+
+
+/* ===== Mention prix inline dans chaque projet ===== */
+.project-prizes {
+  margin-top: 0.5rem;
+  font-size: 9pt; letter-spacing: 0.16em;
+  text-transform: uppercase; font-weight: 700;
+  color: var(--ink); line-height: 1.5;
+}
+.project-prizes::before {
+  content: "\2605"; color: var(--gold);
+  margin-right: 0.5em; font-size: 1.05em;
+}
+.project-prizes .pp-sep { color: var(--light); margin: 0 0.55em; font-weight: 400; }
+.project-prizes .pp-more {
+  color: var(--mid); font-weight: 500;
+  letter-spacing: 0.12em;
+}
+.project-prizes a {
+  color: var(--ink); text-decoration: none;
+  border-bottom: 1px solid var(--subtle);
+  padding-bottom: 1px;
+}
+.project-prizes a:hover {
+  border-bottom-color: var(--ink);
+}
+
+
+/* ===== Note historique dans Reconnaissances ===== */
+.reco-note {
+  max-width: 760px; margin: 2.2rem 0 0;
+  padding: 1.1rem 1.3rem;
+  background: rgba(26,26,26,0.035);
+  font-size: 10pt; line-height: 1.55;
+  color: var(--mid); font-style: italic;
+}
+.reco-note strong {
+  color: var(--ink); font-style: normal;
+  font-weight: 700; letter-spacing: 0.06em;
+}
+
+
+/* ===== Reconnaissances : groupes par pays (international) ===== */
+.reco-country-group { margin-bottom: 2.8rem; }
+.reco-country-group:last-child { margin-bottom: 0; }
+.reco-country {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 800; letter-spacing: 0.005em;
+  text-transform: uppercase; line-height: 1;
+  margin: 0 0 1.3rem; padding-bottom: 0.7rem;
+  border-bottom: 1pt solid var(--ink);
+  color: var(--ink); gap: 1.5rem;
+}
+.reco-country-code {
+  font-size: 10pt; letter-spacing: 0.34em;
+  font-weight: 700; color: var(--mid);
+}
+@media (max-width: 700px) {
+  .reco-country { font-size: clamp(1.2rem, 5vw, 1.6rem); }
+}
+
+
+/* ===== Filière biosourcée — badge brutaliste sous le bandeau projet ===== */
+.project-filiere {
+  display: inline-flex; align-items: baseline; gap: 0.9em;
+  margin-top: 0.7rem; padding: 0.45rem 0.85rem;
+  background: var(--ink); color: var(--paper);
+  font-size: 9pt; letter-spacing: 0.22em; text-transform: uppercase;
+}
+.pf-label { font-weight: 500; opacity: 0.62; }
+.pf-value { font-weight: 800; letter-spacing: 0.18em; }
+
+/* ===== Récit : épigraphe Transformer ne pas Réhabiliter ===== */
+.recit-epigraph { max-width: 820px; margin: 0 auto 4rem; padding: 0; }
+.recit-epigraph .re-statement {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 800; letter-spacing: -0.025em;
+  line-height: 0.92; text-transform: uppercase;
+  margin: 0; color: var(--ink);
+}
+.recit-epigraph .re-statement .re-ne {
+  display: inline-block; margin: 0 0.15em;
+  font-weight: 400; color: var(--mid);
+  font-size: 0.78em; vertical-align: 0.05em;
+}
+.recit-epigraph .re-gloss {
+  font-size: 11pt; line-height: 1.55; color: var(--mid);
+  margin: 1.4rem 0 0; padding-top: 1.1rem;
+  border-top: 1pt solid var(--ink);
+  font-style: italic;
+}
+
+
+/* ===== Page Agence en chiffres ===== */
+.agence-chiffres {
+  padding: 10vh 7vw 8vh; background: var(--paper);
+  page-break-before: always; break-before: page;
+  border-top: 1pt solid var(--ink);
+}
+.ac-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1pt solid var(--ink);
+  padding-bottom: 1.2rem; margin-bottom: 4.5rem; gap: 2rem;
+}
+.ac-title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800; letter-spacing: -0.02em;
+  line-height: 0.9; text-transform: uppercase; margin: 0;
+}
+.ac-meta { font-size: 9pt; letter-spacing: 0.3em; text-transform: uppercase; color: var(--mid); }
+.ac-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem 2.5rem; margin-bottom: 5rem;
+}
+.ac-cell .ac-num {
+  display: block; font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800; letter-spacing: -0.03em; line-height: 0.85; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.ac-cell .ac-unit { font-size: 1.1rem; font-weight: 600; margin-left: 0.3em; }
+.ac-cell .ac-lbl {
+  display: block; margin-top: 0.8rem; font-size: 9.5pt;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid); font-weight: 600;
+}
+.ac-signataires {
+  border-top: 1pt solid var(--ink); padding-top: 2rem; margin-top: 2rem;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2.5rem;
+}
+.ac-signataire .ac-nom { font-weight: 800; font-size: 1.05rem; letter-spacing: 0.01em; }
+.ac-signataire .ac-role {
+  display: block; margin-top: 0.3rem; font-size: 9pt;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid);
+}
+
+/* ===== Page de clôture ===== */
+.cloture {
+  padding: 14vh 7vw 10vh; background: var(--paper);
+  page-break-before: always; break-before: page;
+  border-top: 1pt solid var(--ink);
+}
+.cloture-statement {
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  font-weight: 800; letter-spacing: -0.025em;
+  line-height: 1; text-transform: uppercase;
+  max-width: 1000px; margin: 0 0 3rem; color: var(--ink);
+}
+.cloture-gloss {
+  font-size: 13pt; line-height: 1.65; color: var(--ink);
+  max-width: 720px; margin: 0 0 4rem;
+}
+.cloture-footer {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-top: 1pt solid var(--ink); padding-top: 1.2rem;
+  font-size: 9pt; letter-spacing: 0.28em; text-transform: uppercase; color: var(--mid);
+}
+
+
+/* ===== Colophon brutaliste — fin du document ===== */
+.colophon {
+  padding: 6vh 7vw; background: var(--ink); color: var(--paper);
+  page-break-before: always;
+}
+.colophon-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem; align-items: baseline;
+}
+.colo-cell .colo-lbl {
+  display: block; font-size: 8.5pt; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(245,243,239,0.55); margin-bottom: 0.6rem;
+}
+.colo-cell .colo-val {
+  display: block; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.01em;
+}
+.colophon h2 {
+  font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 800;
+  letter-spacing: -0.02em; text-transform: uppercase; line-height: 0.95;
+  margin: 0 0 2.5rem;
+}
+
+/* ===== Credit photos sous conference-series ===== */
+.cs-photo-credits {
+  margin-top: 0.6rem;
+  font-size: 8pt; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--light); text-align: right;
+}
+
+
+
+
+
+
+
+/* ===== GIFs transformation-method : pleine largeur, header masqué ===== */
+.transformation-method {
+  margin: 1.5rem 0 2rem !important;
+  max-width: none !important;
+  padding: 0 !important;
+}
+.tm-head { display: none !important; }
+.tm-content { display: block !important; }
+.tm-content img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  max-width: none !important;
+}
+
+/* ===== Récit comme intercalaire de chapitre — espace généreux ===== */
+.recit-intercalaire {
+  background: var(--paper);
+  padding: 8vh 7vw 6vh;
+  margin: 2rem 0 0;
+  border-top: 1pt solid var(--ink);
+  border-bottom: 1pt solid var(--ink);
+}
+.recit-intercalaire .recit-meta::before {
+  content: "Intercalaire · ";
+  color: var(--mid);
+}
+
+
+/* ===== Badge Transformation (CMI, Coquibus) ===== */
+.project-transform {
+  display: inline-flex; align-items: baseline; gap: 0.7em;
+  margin-top: 0.7rem; padding: 0.4rem 0.75rem;
+  background: var(--paper); color: var(--ink);
+  border: 1.5px solid var(--ink);
+  font-size: 9pt; letter-spacing: 0.22em; text-transform: uppercase;
+}
+.pt-label { font-weight: 800; }
+.pt-detail { font-weight: 400; color: var(--mid); letter-spacing: 0.12em; }
+.project-transform a { color: var(--gold); text-decoration: none; font-weight: 700; margin-left: 0.4em; }
+.project-transform a:hover { color: var(--ink); }
+
+/* ===== CARTOUCHE V3 — pleine page, 3 blocs alignés (design Designer+Narrateur) ===== */
+.cart-v3 {
+  grid-column: 1 / -1;
+  max-width: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+/* === PRÉAMBULE === */
+.cart-v3 .v3-preamble { margin-bottom: 2rem; }
+.cart-v3 .v3-preamble > * + * { margin-top: 1.5rem; }
+
+/* RECONNAISSANCE (inline list) */
+.cart-v3 .v3-bloc-reco {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--subtle);
+  border-bottom: 1px solid var(--subtle);
+}
+.cart-v3 .v3-bloc-reco .v3-bloc-title {
+  font-size: 10px; letter-spacing: 0.18em;
+  text-transform: uppercase; font-weight: 600;
+  color: var(--gold); margin-bottom: 0.75rem;
+}
+.cart-v3 .v3-bloc-reco .v3-bloc-title::before {
+  content: ""; display: inline-block;
+  width: 6px; height: 6px;
+  background: var(--gold);
+  margin-right: 0.6em;
+  vertical-align: 0.05em;
+}
+.cart-v3 .v3-bloc-reco ul {
+  list-style: none; padding: 0; margin: 0;
+  font-size: 14px; line-height: 1.55;
+}
+.cart-v3 .v3-bloc-reco li {
+  display: inline; color: var(--ink); font-weight: 500;
+}
+.cart-v3 .v3-bloc-reco li + li::before {
+  content: " · "; color: var(--light); font-weight: 300;
+}
+.cart-v3 .v3-bloc-reco li strong { font-weight: 600; }
+.cart-v3 .v3-bloc-reco li .year { color: var(--mid); font-weight: 400; margin-left: 0.3em; }
+.cart-v3 .v3-bloc-reco li .status { color: var(--mid); margin-left: 0.4em; font-style: italic; }
+.cart-v3 .v3-bloc-reco .more {
+  margin-top: 0.7rem;
+  font-size: 10px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--mid);
+}
+.cart-v3 .v3-bloc-reco .more a { color: var(--gold); text-decoration: none; font-weight: 600; }
+
+/* RÉCIT (fond ink) */
+.cart-v3 .v3-bloc-recit {
+  background: var(--ink); color: var(--paper);
+  padding: 2.5rem 2.5rem;
+}
+.cart-v3 .v3-bloc-recit .v3-recit-rule {
+  width: 32px; height: 1px; background: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.cart-v3 .v3-bloc-recit .v3-bloc-title {
+  font-size: 10px; letter-spacing: 0.18em;
+  text-transform: uppercase; font-weight: 600;
+  color: var(--light); margin-bottom: 0.8rem;
+}
+.cart-v3 .v3-bloc-recit p {
+  font-size: 22px; font-weight: 300; font-style: italic;
+  line-height: 1.55; max-width: 60ch;
+  margin: 0; color: var(--paper);
+}
+.cart-v3 .v3-bloc-recit a {
+  display: inline-block; margin-top: 1.5rem;
+  font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; font-weight: 500;
+  color: var(--light); text-decoration: none;
+  font-style: normal;
+}
+.cart-v3 .v3-bloc-recit a::before { content: "— "; }
+
+/* ===== CARTOUCHE V6 — bandeau horizontal data-forward (option E) ===== */
+.cart-v3 {
+  grid-column: 1 / -1;
+  max-width: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  font-family: inherit;
+}
+.cart-v3 .micro {
+  font-size: 10px; letter-spacing: 0.2em;
+  text-transform: uppercase; font-weight: 700;
+  color: var(--light); display: block; margin-bottom: 0.3rem;
+}
+.cart-v3 .v3-bandeau {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 2.5rem;
+  padding: 2.5rem 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  align-items: end;
+}
+.cart-v3 .v3-cell .big {
+  display: block;
+  font-size: 38px; font-weight: 700;
+  letter-spacing: -0.02em; line-height: 1;
+  color: var(--ink); margin-bottom: 0.45rem;
+  font-variant-numeric: tabular-nums;
+}
+.cart-v3 .v3-cell.moa .big {
+  font-size: 24px; line-height: 1.15;
+  font-variant-numeric: normal;
+}
+.cart-v3 .v3-cell.phase .big {
+  font-size: 22px; line-height: 1.2;
+  font-variant-numeric: normal;
+}
+.cart-v3 .v3-cell.phase {
+  background: var(--ink);
+  padding: 1.1rem 1.3rem;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.cart-v3 .v3-cell.phase .micro { color: rgba(255,255,255,0.5); }
+.cart-v3 .v3-cell.phase .big  { color: #F5F3EF; }
+.cart-v3 .v3-cell.phase .sub  { color: rgba(255,255,255,0.65); }
+.cart-v3 .v3-cell .sub {
+  font-size: 14px; color: var(--mid);
+  font-weight: 500; line-height: 1.4;
+  display: block;
+}
+.cart-v3 .v3-prg {
+  margin-top: 1.5rem;
+  font-size: 19px; font-weight: 600;
+  color: var(--ink); line-height: 1.45;
+}
+.cart-v3 .v3-prg .micro { display: inline-block; margin-right: 0.6em; margin-bottom: 0; vertical-align: 0.18em; }
+.cart-v3 a { color: var(--gold); text-decoration: none; font-weight: 700; }
+.cart-v3 a:hover { text-decoration: underline; }
+@media (max-width: 900px) {
+  .cart-v3 .v3-bandeau { grid-template-columns: 1fr 1fr; row-gap: 2rem; }
+  .cart-v3 .v3-cell .big { font-size: 30px; }
+}
+@media (max-width: 560px) {
+  .cart-v3 .v3-bandeau { grid-template-columns: 1fr; }
+}
+
+
+/* === Intercalaires renforces (narrateur) === */
+.chapter-opener {
+  border-top: 6px solid var(--ink) !important;
+  padding: 9rem 8vw 7rem !important;
+  min-height: 80vh;
+  display: flex; flex-direction: column; justify-content: center;
+  max-width: none !important;
+  page-break-before: always;
+}
+.chapter-opener .kicker {
+  display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  margin: 0 0 4rem !important;
+  font-size: 12px !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.chapter-opener .kicker-chip {
+  background: var(--ink); color: var(--gold);
+  padding: 10px 18px;
+  font-weight: 800;
+}
+.chapter-opener .kicker-sub {
+  color: var(--ink);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  font-size: 16px;
+}
+.chapter-opener::before {
+  content: attr(data-num);
+  display: block;
+  font-size: clamp(160px, 22vw, 320px);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+  margin: 0 0 1.5rem -8px;
+}
+.chapter-opener h2 {
+  font-size: clamp(64px, 8vw, 112px) !important;
+  font-weight: 700 !important;
+  line-height: 0.95 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 0 3rem !important;
+  color: var(--ink);
+  max-width: 22ch;
+}
+.chapter-opener .chapter-intro {
+  max-width: 60rem;
+  display: flex; flex-direction: column; gap: 1.5rem;
+}
+.chapter-opener .chapter-intro p { margin: 0; color: var(--ink); }
+.chapter-opener .chapter-intro p.thesis {
+  font-size: clamp(22px, 1.8vw, 28px);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+}
+.chapter-opener .chapter-intro p.examples {
+  font-size: clamp(16px, 1.2vw, 19px);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--mid);
+}
+.chapter-opener .chapter-intro p.conclusion {
+  font-size: clamp(17px, 1.3vw, 20px);
+  font-weight: 600;
+  line-height: 1.5;
+  border-top: 1px solid var(--subtle);
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+}
+@media (max-width: 760px) {
+  .chapter-opener { padding: 5rem 6vw 4rem !important; min-height: auto; }
+  .chapter-opener::before { font-size: clamp(100px, 24vw, 160px); }
+}
+
+
+/* GIFs schemas transformation : 1er slot mosaique, taille reduite */
+.v3-hero.v3-hero-schema {
+  aspect-ratio: auto;
+  max-width: 520px;
+  margin: 0 auto 16px;
+  background: var(--paper);
+  border: 1px solid var(--subtle);
+}
+.v3-hero.v3-hero-schema img.schema-gif {
+  width: 100%; height: auto;
+  display: block;
+  padding: 0;
+  background: var(--paper);
+}
+/* GIF schema dans un slot v3-slot regulier (pas v3-hero) */
+.v3-slot img.schema-gif {
+  width: 100%; height: 100%;
+  object-fit: contain !important;
+  background: var(--paper);
+  padding: 0.5rem;
+  display: block;
+  transform: none !important;
+}
+/* Coquibus : GIF nettoye, plus besoin de mix-blend */
+
+
+
+/* Video apres hero (AVIA, Montreuil) */
+.v3-video-block {
+  width: 100%;
+  margin: 12px 0;
+  background: var(--ink);
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.v3-video-block video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Video EN HERO (CMI) : meme dimensions qu'un v3-hero */
+.v3-hero.v3-hero-video {
+  width: 100%; aspect-ratio: 16/9; margin-bottom: 12px;
+  position: relative; overflow: hidden;
+  background: var(--ink);
+}
+.v3-hero.v3-hero-video video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+</style>
+</head>
+<body class="">
+
+<div class="le-toast" id="le-toast">✓ Sauvegardé sur disque</div>
+
+
+<nav class="toc-nav" id="toc-nav" aria-label="Table des matières">
+  <button class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-label="Ouvrir le sommaire">☰</button>
+  <div class="toc-panel" role="navigation" aria-label="Sommaire">
+    <div class="toc-panel-header">Sommaire</div>
+    <ul class="toc-list">
+      <li class="toc-chapter"><a href="#cover">Couverture</a></li>
+      <li class="toc-chapter"><a href="#agence">L'agence</a></li>
+      <li class="toc-chapter"><a href="#projets">Projets</a>
+        <ul class="toc-projects">
+          <li><a href="#proj-cmi">Musée des religions — CMI</a></li>
+          <li><a href="#proj-numerique">Musée du Numérique — Savigny</a></li>
+          <li><a href="#proj-coeur">Cœur des Sources — Saint-Germain-en-Laye</a></li>
+        </ul>
+      </li>
+      <li class="toc-chapter"><a href="#reconnaissances">Reconnaissances</a></li>
+      <li class="toc-chapter"><a href="#cloture">Clôture</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- ============ COVER ============ -->
+<section class="v5-cover" id="cover"><div class="cover-eyebrow"><span class="cover-eyebrow-brand">NZI Architectes Urbanistes</span><span class="cover-eyebrow-year">Carnet de voyage · 2025–2026</span></div>
+<div class="cover-hero"><img src="../media/descendez lentement - Cover.JPG" alt="Descendez lentement — NZI chantier"></div>
+<div class="v5-cover-top">
+<span>NZI Architectes Urbanistes</span>
+<span>Paris · 2012</span>
+</div>
+<div class="v5-cover-title">
+<div class="v5-cover-kicker">Carnet 2025-2026</div>
+<h1 class="v5-cover-h1"><span class="v2-char" style="--ci: 0;">T</span><span class="v2-char" style="--ci: 1;">r</span><span class="v2-char" style="--ci: 2;">a</span><span class="v2-char" style="--ci: 3;">v</span><span class="v2-char" style="--ci: 4;">e</span><span class="v2-char" style="--ci: 5;">l</span><span class="v2-char" style="--ci: 6;">l</span><span class="v2-char" style="--ci: 7;">i</span><span class="v2-char" style="--ci: 8;">n</span><span class="v2-char" style="--ci: 9;">g</span></h1>
+<div class="v5-cover-subtitle">Dix-sept opérations de transformation, de logement social et d'équipement public mixte — livrées, en chantier ou à l'étude.</div>
+</div>
+<div class="v5-cover-bottom">
+<span>26 rue Miguel Hidalgo · 75019 Paris · nzi.fr</span>
+<span class="v5-cover-arrow">↓</span>
+</div>
+</section>
+<!-- ============ OUVERTURE ============ -->
+<section class="ouverture">
+<div class="kicker">Ouverture</div>
+<p class="lead"><strong>La réponse attendue était toujours la même : raser, recommencer.</strong> Nous avons fait le choix inverse. Pas par idéologie — par lecture. Lire ce qu'il y a déjà avant de décider ce qui manque.</p>
+<p class="lead"><em>Ce carnet n'est pas une rétrospective. C'est un travelling : dix-sept opérations qui nous occupent en 2025 et 2026 — livrées, en chantier ou à l'étude. Construites autour d'une seule conviction : on construit mieux quand on construit moins.</em></p>
+<p class="lead">Travelling, au cinéma — la caméra qui se déplace sans couper. Elle traverse, elle ne remplace pas. Nous faisons pareil avec la ville.</p>
+<p class="lead">NZI · Paris · 2012. Ces dix-sept projets ne sont pas la somme de notre travail : ils en sont la part vivante aujourd'hui — celle qui est sur nos tables, sur nos chantiers, dans nos jurys.</p>
+<div class="signature">NZI · mai 2026</div>
+</section>
+<section class="agence-chiffres" id="agence"><header class="ac-head"><h2 class="ac-title">L'agence en chiffres</h2><span class="ac-meta">NZI · Paris · depuis 2012</span></header><div class="ac-grid"><div class="ac-cell"><span class="ac-num">2012</span><span class="ac-lbl">Fondation</span></div><div class="ac-cell"><span class="ac-num">20<span class="ac-unit">bâtiments</span></span><span class="ac-lbl">Livrés depuis 2012</span></div><div class="ac-cell"><span class="ac-num">17<span class="ac-unit">opérations</span></span><span class="ac-lbl">En cours · 2025-2026</span></div><div class="ac-cell"><span class="ac-num">15<span class="ac-unit">architectes</span></span><span class="ac-lbl">Effectif courant</span></div><div class="ac-cell"><span class="ac-num">22</span><span class="ac-lbl">Distinctions 2017-2026</span></div><div class="ac-cell"><span class="ac-num">32</span><span class="ac-lbl">Conférences &amp; expositions</span></div></div><div class="ac-signataires"><div class="ac-signataire"><span class="ac-nom">Sandra de Giorgio</span><span class="ac-role">Co-fondatrice · architecte DPLG · gérante</span></div><div class="ac-signataire"><span class="ac-nom">Gianluca Gaudenzi</span><span class="ac-role">Co-fondateur · architecte DPLG · gérant</span></div></div></section>
+
+<!-- ============ PROJETS ============ -->
+<section class="chapter-opener" id="projets" data-num="·">
+  <div class="kicker"><span class="kicker-chip">Projets</span><span class="kicker-sub">Trois équipements culturels</span></div>
+  <h2>Trois projets.</h2>
+  <p class="lead">Un musée des religions inscrit dans une ancienne usine de craie. Un musée du numérique greffé sur la salle Diderot à Savigny. Un cœur culturel et sportif à Saint-Germain-en-Laye. Trois échelles, trois programmes, une même méthode — lire l'existant, ajouter ce qui manque, ne rien remplacer en vain.</p>
+</section>
+<article class="project"><header class="project-header">
+<div class="project-title">
+<div class="project-num-line">
+<span class="project-num">05</span>
+<span class="project-num-label">Équipement culturel · études</span>
+</div>
+<h3 id="proj-cmi">Musée des religions — CMI Issy</h3>
+<div class="program-line">Transformation-extension d'une usine de craie · centre culturel à vocation universaliste · auditorium — Issy-les-Moulineaux</div>
+<div class="project-transform"><span class="pt-label">Transformation</span><span class="pt-detail">soustraction et/ou addition</span><a href="#ch-transformations">→ Ch. III</a></div>
+<div class="project-filiere"><span class="pf-label">Filière</span><span class="pf-value">Bois + terre crue (pisé)</span></div>
+<div class="v3-perfo-block"><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">E3C1 · rénovation énergétique</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">Construction Bois · pisé</div><div class="v3-perfo-key">Structure</div><div class="v3-perfo-value">Transformation usine de craie · structure existante</div></div>
+</div>
+<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell moa"><span class="micro">Maître d'ouvrage</span><span class="big">Ville d'Issy-les-Moulineaux</span><span class="sub">Lauréat concours</span></div><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">8,85 M€</span><span class="sub">2 950 €/m²</span></div><div class="v3-cell surface"><span class="micro">Surface</span><span class="big">3 000 m²</span><span class="sub">SDP</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">Études</span><span class="sub">livraison 2T 2028 · Structure bois · terre crue (pisé) · volumes métalliques conservés</span></div></div><div class="v3-prg"><span class="micro">Programme</span> · <a href="#ch-transformations">Transformations → Ch. III</a></div></div></header><div class="project-description">
+</div><div class="v3-project-grid"><div class="v3-hero v3-hero-video" id="v3-cmi-0"><video autoplay="" loop="" muted="" playsinline="" controls="" preload="metadata"><source src="../media/cmi-video.mp4" type="video/mp4"></video></div><div class="v3-row v3-row-2"><div class="v3-slot v3-slot-43" id="v3-cmi-2"><a class="v3-open" href="#le-add-1779020343189-7w8j"><img src="../media/upload-f138ef27.png" alt="CMI_004.png" class="" style="object-position: 60.3% 100%; transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-cmi-3"><a class="v3-open" href="#v3-cmi-3"><img src="../media/CMI_005.jpg" alt="CMI_005.png" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-2"><div class="v3-slot v3-slot-43" id="v3-cmi-4"><a class="v3-open" href="#v3-cmi-4"><img src="../media/CMI_002.jpg" alt="CMI_002.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-cmi-5"><a class="v3-open" href="#v3-cmi-5"><img src="../media/blanqueterie_web.jpg" alt="blanqueterie_web.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="le-add-1779020343189-7w8j"><a class="v3-open" href="#v3-cmi-2"><img src="../media/cmi-schema-transformation.gif" alt="Schema transformation CMI" class="schema-gif" style="transform: none !important;"></a></div></div><div class="v3-hero" id="le-add-1778969288462-s34z"><a class="v3-open" href="#le-add-1778969288462-s34z"><img src="../media/NZI__210124 VUE I atrium 005.jpg" alt="NZI__210124 VUE I atrium 005.jpg" style="transform: none !important;"></a></div></div></article>
+<article class="project"><header class="project-header">
+<div class="project-title">
+<div class="project-num-line">
+<span class="project-num">06</span>
+<span class="project-num-label">Équipement culturel · chantier</span>
+</div>
+<h3 id="proj-numerique">Musée du Numérique</h3>
+<div class="program-line">Pôle culturel · 3 cinémas · bureaux · Micro-folies · Musée du Numérique — Savigny</div>
+<div class="v3-perfo-block"><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Cerqual HQE Tertiaire</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E3C1 · béton de site</div><div class="v3-perfo-key">Structure</div><div class="v3-perfo-value">Transformation cinéma Excelsior</div></div>
+</div>
+<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell moa"><span class="micro">Maître d'ouvrage</span><span class="big">Ville de Savigny-sur-Orge</span><span class="sub">Lauréat concours</span></div><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">9,35 M€</span><span class="sub">4 675 €/m²</span></div><div class="v3-cell surface"><span class="micro">Surface</span><span class="big">2 000 m²</span><span class="sub">SDP</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">Chantier en cours</span><span class="sub">livraison 2T 2027 · Béton de site · enveloppe acoustique</span></div></div></div></header><div class="project-description">
+</div><div class="v3-project-grid"><div class="v3-hero" id="v3-numerique-0"><a class="v3-open" href="#v3-numerique-0"><img src="../media/OTA_nzi_savigny_ext_BD.jpg" alt="OTA_nzi_savigny_ext_BD.jpg" style="transform: none !important;"></a></div><div class="v3-hero" id="v3-numerique-1"><a class="v3-open" href="#v3-numerique-1"><img src="../media/OTA_nzi_savigny_int_BD.jpg" alt="OTA_nzi_savigny_int_BD.jpg" style="transform: none !important;"></a></div></div></article>
+<article class="project"><header class="project-header">
+<div class="project-title">
+<div class="project-num-line">
+<span class="project-num">02</span>
+<span class="project-num-label">Équipement mixte · chantier</span>
+</div>
+<h3 id="proj-coeur">Cœur des Sources</h3>
+<div class="program-line">Auditorium · conservatoire · dojo · gymnase · Agora · parc paysager — Saint-Germain-en-Laye</div>
+<div class="v3-perfo-block"><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Cerqual HQE Tertiaire · BDF Argent</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E3C1</div><div class="v3-perfo-key">Structure</div><div class="v3-perfo-value">Mixte bois + béton bas carbone</div></div>
+</div>
+<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell moa"><span class="micro">Maître d'ouvrage</span><span class="big">Ville de Saint-Germain-en-Laye</span><span class="sub">Lauréat concours</span></div><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">34 M€</span><span class="sub">3 400 €/m²</span></div><div class="v3-cell surface"><span class="micro">Surface</span><span class="big">10 000 m²</span><span class="sub">SDP</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">Chantier en cours</span><span class="sub">livraison 1T 2027 · Bois/béton · parement pierre · charpentes bois</span></div></div></div></header><div class="project-description">
+</div><div class="v3-project-grid"><div class="v3-hero" id="v3-coeur-0"><a class="v3-open" href="#v3-coeur-0"><img src="../media/COEUR-DES-SOURCES_012.jpg" alt="COEUR-DES-SOURCES_012.jpg" style="transform: none !important;"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-coeur-1"><a class="v3-open" href="#v3-coeur-1"><img src="../media/COEUR-DES-SOURCES_001.jpg" alt="COEUR-DES-SOURCES_001.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-coeur-2"><a class="v3-open" href="#v3-coeur-2"><img src="../media/COEUR-DES-SOURCES_002.jpg" alt="COEUR-DES-SOURCES_002.png" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-coeur-3"><a class="v3-open" href="#v3-coeur-3"><img src="../media/Salle 2 ok.jpg" alt="Salle 2 ok.png" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-coeur-4"><a class="v3-open" href="#v3-coeur-4"><img src="../media/COEUR-DES-SOURCES_009.jpg" alt="COEUR-DES-SOURCES_009.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-coeur-5"><a class="v3-open" href="#v3-coeur-5"><img src="../media/GML-StGerLayCoeurSources-250722-01.jpg" alt="GML-StGerLayCoeurSources-250722-01.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-coeur-6"><a class="v3-open" href="#v3-coeur-6"><img src="../media/20251127_134452.jpg" alt="20251127_134452.jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-2"><div class="v3-slot v3-slot-43" id="v3-coeur-7"><a class="v3-open" href="#v3-coeur-7"><img src="../media/COEUR-DES-SOURCES_003.jpg" alt="COEUR-DES-SOURCES_003.png" style="transform: none !important; object-position: 50.4% 100%;" class=""></a></div><div class="v3-slot v3-slot-43" id="v3-coeur-8"><a class="v3-open" href="#v3-coeur-8"><img src="../media/Audi 2.jpg" alt="Audi 2.png" class="" style="transform: none !important; object-position: 46.1% 58.5%;"></a></div></div></div></article>
+
+<!-- ============ RECONNAISSANCES ============ -->
+<section class="reconnaissances" id="reconnaissances">
+  <header class="reco-head">
+    <h2 class="reco-title">Reconnaissances</h2>
+    <span class="reco-meta">Distinctions, conférences &amp; expositions · 2016 — 2026</span>
+  </header>
+
+  <div class="reco-section">
+    <p class="reco-section-title">Distinctions</p>
+    <div class="reco-subsection">
+      <p class="reco-subsection-title">Scène internationale</p>
+      <ul class="reco-list">
+        <li class="reco-row"><span class="reco-year">2024</span><div class="reco-main"><span class="reco-prize">ArchDaily Building of the Year</span><span class="reco-project">Buzenval · Paris 20ᵉ</span></div><span class="reco-status">Sélection</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Architizer A+ Awards</span><span class="reco-project">Bertelotte · Architecture &amp; Affordable Design</span></div><span class="reco-status is-laureat">Lauréat</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Architizer A+ Awards</span><span class="reco-project">Bertelotte</span></div><span class="reco-status">Finaliste ×2</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Prix UIA 2030</span><span class="reco-project">Bertelotte · UIA / ONU-Habitat</span></div><span class="reco-status">Mention d'honneur</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Dezeen Awards</span><span class="reco-project">Bertelotte</span></div><span class="reco-status">Longlist</span></li>
+        <li class="reco-row"><span class="reco-year">2020</span><div class="reco-main"><span class="reco-prize">ArchDaily Building of the Year</span><span class="reco-project">13 maisons bois+paille · Nogent-le-Rotrou</span></div><span class="reco-status">Sélection</span></li>
+        <li class="reco-row"><span class="reco-year">2018</span><div class="reco-main"><span class="reco-prize">Europe 40 Under 40</span><span class="reco-project">NZI · Chicago Athenaeum / European Centre</span></div><span class="reco-status is-laureat">Lauréat</span></li>
+      </ul>
+    </div>
+    <div class="reco-subsection">
+      <p class="reco-subsection-title">Scène nationale — France</p>
+      <ul class="reco-list">
+        <li class="reco-row"><span class="reco-year">2026</span><div class="reco-main"><span class="reco-prize">Creativ'Impact</span><span class="reco-project">NZI</span></div><span class="reco-status">Finaliste</span></li>
+        <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">APEX — Architectures Parisiennes Exemplaires</span><span class="reco-project">Python-Duvernois · Ville de Paris</span></div><span class="reco-status is-laureat">Lauréat</span></li>
+        <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">AMI Bâti Sobre</span><span class="reco-project">Python-Duvernois · ADEME</span></div><span class="reco-status is-laureat">Lauréat</span></li>
+        <li class="reco-row"><span class="reco-year">2024</span><div class="reco-main"><span class="reco-prize">Trophée BBCA Quartier Bas Carbone</span><span class="reco-project">ZAC Python-Duvernois · Certivea / SEMAPA</span></div><span class="reco-status is-laureat">Lauréat</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Trophées de la Construction</span><span class="reco-project">Bertelotte · Batiactu</span></div><span class="reco-status is-laureat">Lauréat</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Grand Prix SIMI</span><span class="reco-project">Bertelotte · Habitat &amp; Logements Transformation</span></div><span class="reco-status">Finaliste</span></li>
+        <li class="reco-row"><span class="reco-year">2021</span><div class="reco-main"><span class="reco-prize">Prix Construction Bois Île-de-France</span><span class="reco-project">Bertelotte · Fibois IDF</span></div><span class="reco-status is-laureat">Lauréat</span></li>
+        <li class="reco-row"><span class="reco-year">2020</span><div class="reco-main"><span class="reco-prize">Palmarès des Bâtiments biosourcés</span><span class="reco-project">13 maisons bois+paille · Nogent-le-Rotrou · FFB</span></div><span class="reco-status is-laureat">Prix du Jury</span></li>
+        <li class="reco-row"><span class="reco-year">2020</span><div class="reco-main"><span class="reco-prize">ADC Awards</span><span class="reco-project">Nogent-le-Rotrou</span></div><span class="reco-status">Nominé</span></li>
+        <li class="reco-row"><span class="reco-year">2020</span><div class="reco-main"><span class="reco-prize">ADC Awards</span><span class="reco-project">Périscolaire Bonneuil-en-France</span></div><span class="reco-status">Nominé</span></li>
+        <li class="reco-row"><span class="reco-year">2019</span><div class="reco-main"><span class="reco-prize">Trophées Bois Île-de-France</span><span class="reco-project">Périscolaire Bonneuil-en-France · Fibois IDF</span></div><span class="reco-status is-laureat">Lauréat</span></li>
+        <li class="reco-row"><span class="reco-year">2018</span><div class="reco-main"><span class="reco-prize">ADC Awards</span><span class="reco-project">26 logements participatifs · Montreuil</span></div><span class="reco-status is-laureat">Lauréat</span></li>
+        <li class="reco-row"><span class="reco-year">2018</span><div class="reco-main"><span class="reco-prize">Jeune Femme Architecte</span><span class="reco-project">Sandra de Giorgio · ARVHA</span></div><span class="reco-status is-laureat">Lauréate</span></li>
+        <li class="reco-row"><span class="reco-year">2017</span><div class="reco-main"><span class="reco-prize">Équerre d'Argent — Première Œuvre</span><span class="reco-project">26 logements participatifs · Montreuil · Le Moniteur / AMC</span></div><span class="reco-status">Nominé</span></li>
+      </ul>
+      <p class="reco-note"><strong>Note historique</strong> — Les prix 2017–2020 (Nogent-le-Rotrou, Bonneuil-en-France, Équerre d'Argent Montreuil) concernent des projets antérieurs au scope 2025-2026 de ce carnet. Ils figurent ici pour attester que la méthode NZI — transformation active, biosourcés, bois+paille — tient depuis huit ans, pas seulement depuis 2025.</p>
+    </div>
+  </div>
+
+  <div class="reco-section">
+    <p class="reco-section-title">Conférences,<br>expositions<br>&amp; événements</p>
+    <div class="reco-subsection">
+      <p class="reco-subsection-title">Scène internationale</p>
+      <p class="reco-subsection-title">Scène internationale — par pays</p>
+      <div class="reco-country-group">
+        <h4 class="reco-country">France<span class="reco-country-code">FR</span></h4>
+        <ul class="reco-list">
+          <li class="reco-row"><span class="reco-year">2026</span><div class="reco-main"><span class="reco-prize">Forum Bois Construction</span><span class="reco-project">Grand Palais · Paris</span></div><span class="reco-status">Participation + exposition</span></li>
+        </ul>
+      </div>
+      <div class="reco-country-group">
+        <h4 class="reco-country">Italie<span class="reco-country-code">IT</span></h4>
+        <ul class="reco-list">
+          <li class="reco-row"><span class="reco-year">2023</span><div class="reco-main"><span class="reco-prize">Biennale d'Architecture de Pise</span></div><span class="reco-status">Exposition + conférence</span></li>
+          <li class="reco-row"><span class="reco-year">2016</span><div class="reco-main"><span class="reco-prize">Biennale de Venise — RIUSO</span></div><span class="reco-status">Exposition</span></li>
+        </ul>
+      </div>
+      <div class="reco-country-group">
+        <h4 class="reco-country">Autriche<span class="reco-country-code">AT</span></h4>
+        <ul class="reco-list">
+          <li class="reco-row"><span class="reco-year">2026</span><div class="reco-main"><span class="reco-prize">PLANERFORUM.ARCHITEKTUR</span><span class="reco-project">TU Wien · Vienne</span></div><span class="reco-status">Conférencier invité</span></li>
+          <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">IHF Innsbruck (29ᵉ édition)</span><span class="reco-project">Conférence internationale</span></div><span class="reco-status">Conférencier invité</span></li>
+          <li class="reco-row"><span class="reco-year">2024</span><div class="reco-main"><span class="reco-prize">Forum Holzbau Innsbruck</span></div><span class="reco-status">Stand</span></li>
+        </ul>
+      </div>
+      <div class="reco-country-group">
+        <h4 class="reco-country">Pays-Bas<span class="reco-country-code">NL</span></h4>
+        <ul class="reco-list">
+          <li class="reco-row"><span class="reco-year">2024</span><div class="reco-main"><span class="reco-prize">IABR Rotterdam</span><span class="reco-project">Paris Biobased / Emma Diehl</span></div><span class="reco-status">Exposition</span></li>
+          <li class="reco-row"><span class="reco-year">2016</span><div class="reco-main"><span class="reco-prize">IABR Rotterdam — The Next Economy</span></div><span class="reco-status">Exposition + conférences</span></li>
+        </ul>
+      </div>
+      <div class="reco-country-group">
+        <h4 class="reco-country">Espagne<span class="reco-country-code">ES</span></h4>
+        <ul class="reco-list">
+          <li class="reco-row"><span class="reco-year">2023</span><div class="reco-main"><span class="reco-prize">COACAN — Cantabrie</span><span class="reco-project">Santander</span></div><span class="reco-status">Conférencier invité</span></li>
+        </ul>
+      </div>
+      <div class="reco-country-group">
+        <h4 class="reco-country">Australie<span class="reco-country-code">AU</span></h4>
+        <ul class="reco-list">
+          <li class="reco-row"><span class="reco-year">2021</span><div class="reco-main"><span class="reco-prize">University of Western Australia</span><span class="reco-project">En ligne</span></div><span class="reco-status">Conférencier invité</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="reco-subsection">
+      <p class="reco-subsection-title">Scène nationale — France</p>
+      <ul class="reco-list">
+        <li class="reco-row"><span class="reco-year">2025-2026</span><div class="reco-main"><span class="reco-prize">Pavillon de l'Arsenal · Paris</span><span class="reco-project">Parties communes — 26 logements participatifs · Montreuil</span></div><span class="reco-status">Exposition</span></li>
+        <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">Forum Bois Construction · Paris</span><span class="reco-project">Intervention Nollet · Construction bas carbone</span></div><span class="reco-status">Conférence</span></li>
+        <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">Observatoire Construction Bois</span></div><span class="reco-status">Colloque</span></li>
+        <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">Lille Métropole — ADULM</span><span class="reco-project">Avenir des parkings et leur transformation</span></div><span class="reco-status">Conférence</span></li>
+        <li class="reco-row"><span class="reco-year">2024</span><div class="reco-main"><span class="reco-prize">Forum Bois Construction · Nancy</span><span class="reco-project">Village des Athlètes</span></div><span class="reco-status">Conférence</span></li>
+        <li class="reco-row"><span class="reco-year">2023</span><div class="reco-main"><span class="reco-prize">Congrès USH Nantes — CNOA</span></div><span class="reco-status">Conférence</span></li>
+        <li class="reco-row"><span class="reco-year">2023</span><div class="reco-main"><span class="reco-prize">Maison de l'Architecture · Paris</span><span class="reco-project">Conférence Nollet</span></div><span class="reco-status">Conférence</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Pavillon de l'Arsenal · Paris</span><span class="reco-project">Présentation Nollet</span></div><span class="reco-status">Débat</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">CNDB — Bardage bois</span></div><span class="reco-status">Colloque technique</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">BAP! Île-de-France</span><span class="reco-project">Village des Athlètes</span></div><span class="reco-status">Exposition</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Maison de l'Architecture · Normandie</span></div><span class="reco-status">Exposition</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">CAUE 92</span><span class="reco-project">Transformer des bureaux en logements</span></div><span class="reco-status">Conférence pédagogique</span></li>
+        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Labo Éco-construction Paris</span></div><span class="reco-status">Séminaire</span></li>
+        <li class="reco-row"><span class="reco-year">2021</span><div class="reco-main"><span class="reco-prize">ENSAPLV · Paris</span></div><span class="reco-status">Conférence pédagogique</span></li>
+        <li class="reco-row"><span class="reco-year">2021</span><div class="reco-main"><span class="reco-prize">Université La Sorbonne · Paris</span></div><span class="reco-status">Conférence pédagogique</span></li>
+        <li class="reco-row"><span class="reco-year">2021</span><div class="reco-main"><span class="reco-prize">ESA · Paris</span></div><span class="reco-status">Conférence</span></li>
+        <li class="reco-row"><span class="reco-year">2020</span><div class="reco-main"><span class="reco-prize">CAUE 92</span><span class="reco-project">Logement et équipements</span></div><span class="reco-status">Séminaire</span></li>
+        <li class="reco-row"><span class="reco-year">2020</span><div class="reco-main"><span class="reco-prize">ENSA Val de Seine</span></div><span class="reco-status">Conférence pédagogique</span></li>
+        <li class="reco-row"><span class="reco-year">2019</span><div class="reco-main"><span class="reco-prize">Forum Bois Construction · Nancy</span></div><span class="reco-status">Conférence</span></li>
+        <li class="reco-row"><span class="reco-year">2019</span><div class="reco-main"><span class="reco-prize">Biennale de Versailles — Femmes Architectes</span><span class="reco-project">Sandra de Giorgio</span></div><span class="reco-status">Exposition</span></li>
+        <li class="reco-row"><span class="reco-year">2018</span><div class="reco-main"><span class="reco-prize">Pavillon de l'Arsenal · Paris</span><span class="reco-project">Habiter Mieux, Habiter Plus</span></div><span class="reco-status">Exposition + conférence</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="cloture" id="cloture"><p class="cloture-statement">Le travelling s'arrête ici. Le projet continue.</p><p class="cloture-gloss">Dix-sept opérations, dix-sept manières d'entrer dans ce qui existait déjà. Le carnet se referme ; les chantiers, les études et les jurys continuent. La prochaine édition documentera la suite — d'autres parkings transformés, d'autres terres crues posées, d'autres cœurs d'îlot ouverts.</p><div class="cloture-footer"><span>Carnet 2025-2026 · NZI Architectes Urbanistes</span><span>Travelling · Édition 01</span></div></section>
+<section class="contact-block"><div class="kicker">VII — Contact</div><h2>Prendre contact.</h2><div class="contact-grid">
+<div class="contact-cell">
+<div class="label">Agence</div>
+<div class="contact-name">NZI Architectes Urbanistes</div>
+<div class="contact-line">26 rue Miguel Hidalgo</div>
+<div class="contact-line">75019 Paris</div>
+</div>
+<div class="contact-cell">
+<div class="label">Joindre l'agence</div>
+<div class="contact-line"><a href="mailto:nzi@nzi.fr">nzi@nzi.fr</a></div>
+<div class="contact-line"><a href="tel:+33950156430">+33 (0)9 50 15 64 30</a></div>
+<div class="contact-line"><a href="https://www.nzi.fr">nzi.fr</a></div>
+</div>
+<div class="contact-cell">
+<div class="label">Direction</div>
+<div class="contact-name">Sandra de Giorgio</div>
+<div class="contact-name">Gianluca Gaudenzi</div>
+<div class="contact-line">Cofondateurs</div>
+</div>
+<div class="contact-cell">
+<div class="label">Échanger</div>
+<div class="contact-line">Une consultation, un projet, un doute ?</div>
+<div class="contact-line">Écrivez directement à l'agence.</div>
+<div class="contact-line">On vous rappelle.</div>
+</div>
+</div><div class="contact-footer">
+<span class="meta">Fin des Relevés · Édition 01</span>
+<span class="meta">SIREN 752 357 921 · SARL d'architecture</span>
+</div></section>
+<script>
+/* Cover animations */
+(function() {
+  var cover = document.querySelector('.v5-cover');
+  /* Eyebrow NZI */
+  if (cover && !cover.querySelector('.cover-eyebrow')) {
+    var eyebrow = document.createElement('div');
+    eyebrow.className = 'cover-eyebrow';
+    eyebrow.innerHTML =
+      '<span class="cover-eyebrow-brand">NZI Architectes Urbanistes</span>' +
+      '<span class="cover-eyebrow-year">Carnet de voyage &middot; 2025&ndash;2026</span>';
+    cover.insertBefore(eyebrow, cover.firstChild);
+  }
+  /* Lettre par lettre sur le h1 */
+  var h1 = document.querySelector('.v5-cover-h1');
+  if (h1) {
+    var raw = h1.textContent || h1.innerText;
+    h1.innerHTML = '';
+    var ci = 0;
+    for (var i = 0; i < raw.length; i++) {
+      var ch = raw[i];
+      var span = document.createElement('span');
+      if (ch === ' ') {
+        span.className = 'v2-sp';
+      } else {
+        span.className = 'v2-char';
+        span.style.setProperty('--ci', ci);
+        span.textContent = ch;
+        ci++;
+      }
+      h1.appendChild(span);
+    }
+  }
+  /* Parallax images au scroll */
+  var imgs = Array.from(document.querySelectorAll('.image-slot img, .v3-slot img, .v3-hero img'));
+  function parallax() {
+    var vh = window.innerHeight;
+    imgs.forEach(function(img) {
+      var wrap = img.closest('.image-slot, .v3-slot, .v3-hero');
+      if (!wrap) return;
+      var rect = wrap.getBoundingClientRect();
+      if (rect.top < vh * 1.5 && rect.bottom > -200) {
+        var p = (rect.top + rect.height * 0.5 - vh * 0.5) / vh;
+        img.style.transform = 'scale(1.09) translateY(' + (p * 24) + 'px)';
+      }
+    });
+  }
+  window.addEventListener('scroll', parallax, { passive: true });
+})();
+</script>
+<script>
+(function() {
+  var toc = document.getElementById('toc-nav');
+  var toggle = document.getElementById('toc-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', function() {
+      var open = toc.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      if (toc && toc.classList.contains('open')) {
+        toc.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+      if (location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+    }
+  });
+  // Fermer TOC au clic sur un lien
+  if (toc) {
+    toc.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        toc.classList.remove('open');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+})();
+</script>
+<script>
+/* P1 — Bouton fermeture lightbox + bg-close */
+(function() {
+  // Click sur le fond du lightbox = fermer
+  document.addEventListener('click', function(ev) {
+    if (!location.hash || location.hash.indexOf('v3-') === -1) return;
+    var t = ev.target;
+    if (t.tagName === 'IMG' || t.closest('.img-actions') || t.closest('.js-lb-close')) return;
+    if (t.classList.contains('v3-open') || t.classList.contains('v3-hero') || t.classList.contains('v3-slot')) {
+      ev.preventDefault();
+      location.hash = '__lb_close__';
+      setTimeout(function() {
+        if (history.replaceState) history.replaceState('', '', location.pathname + location.search);
+      }, 0);
+      var b = document.querySelector('.js-lb-close');
+      if (b) b.classList.remove('visible');
+    }
+  });
+  /* lightbox-bg-close */
+
+  var btn = document.createElement('button');
+  btn.className = 'js-lb-close';
+  btn.innerHTML = '&#215;';
+  btn.setAttribute('aria-label', 'Fermer');
+  document.body.appendChild(btn);
+  function update() {
+    btn.classList.toggle('visible', !!location.hash && location.hash.indexOf('v3-') !== -1);
+  }
+  window.addEventListener('hashchange', update);
+  btn.addEventListener('click', function(ev) {
+    ev.preventDefault();
+    // Force :target à se libérer : navigation vers ancre invalide puis nettoyage URL
+    location.hash = '__lb_close__';
+    setTimeout(function() {
+      if (history.replaceState) {
+        history.replaceState('', '', location.pathname + location.search);
+      } else {
+        location.hash = '';
+      }
+    }, 0);
+    btn.classList.remove('visible');
+  });
+  update();
+})();
+</script><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button>
+
+
+</body></html>
