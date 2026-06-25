@@ -2,10 +2,10 @@
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>NZI — Transformations 2025–2026</title>
+<title>NZI — Biosourced Transformations 2025–2026</title>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <style>
 
 :root {
@@ -17,7 +17,7 @@
   --pierre: #E5DFD0;          /* PIERRE — fond pour les slots images */
   --pierre-2: #DDD5C2;        /* PIERRE plus prononcée */
   --hairline: rgba(26,26,26,0.18);
-  --gold: #B58E2E;
+  --gold: #C06A3C;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -129,7 +129,7 @@ html, body {
   width: 100%;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: 4rem;
+  gap: 1.4rem 4rem;
   align-items: end;
 }
 .project-num-line {
@@ -710,7 +710,7 @@ html, body {
   font-size: 0.9rem;
   opacity: 0.7;
 }
-.v5-cover-arrow { font-size: 2rem; line-height: 1; color: var(--gold); }
+.v5-cover-arrow { font-size: 2rem; line-height: 1; color: rgba(245,243,239,0.55); }
 
 
 
@@ -792,6 +792,7 @@ html, body {
 
 /* ============ COVER AVEC PHOTO + ANIMATIONS ============ */
 /* v2char : apparition lettre par lettre */
+.v5-cover-h1 .v2-word { display: inline-block; white-space: nowrap; }
 .v5-cover-h1 .v2-char {
   display: inline-block;
   opacity: 0;
@@ -859,54 +860,68 @@ html, body {
   font-weight: 900;
   color: rgba(255,255,255,0.9);
 }
+.cover-eyebrow-id { display: flex; align-items: center; gap: 0.7rem; }
+.cover-eyebrow-logo {
+  height: 22px; width: auto; display: block;
+  opacity: 0.96;
+}
+.cover-eyebrow-sub {
+  font-size: 0.6rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(245,243,239,0.7);
+}
 .cover-eyebrow-year {
   font-size: 0.62rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   font-weight: 500;
-  color: rgba(255,255,255,0.4);
+  color: rgba(245,243,239,0.5);
 }
 /* Tout le contenu au-dessus de l'overlay */
 .v5-cover > *:not(.cover-hero) { position: relative; z-index: 2; }
 /* Kicker */
 .v5-cover-kicker {
-  color: var(--gold);
-  font-size: 0.65rem;
-  letter-spacing: 0.5em;
-  font-weight: 900;
+  color: rgba(245,243,239,0.6);
+  font-size: 0.68rem;
+  letter-spacing: 0.52em;
+  font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 /* Titre sur fond sombre */
 .v5-cover-h1 {
-  font-weight: 400;
-  color: #FFFFFF;
-  letter-spacing: -0.04em;
-  line-height: 0.86;
+  font-weight: 800;
+  color: #F5F3EF;
+  letter-spacing: -0.035em;
+  line-height: 0.84;
   overflow: visible;
+  width: min-content;
 }
 /* Trait or animé sous le titre */
 .v5-cover-h1::after {
   content: '';
   display: block;
   width: 0;
-  height: 2px;
-  background: var(--gold);
-  margin-top: 2rem;
+  height: 1.5px;
+  background: rgba(245,243,239,0.5);
+  margin-top: 1.8rem;
   animation: coverLine 0.7s cubic-bezier(0.16,1,0.3,1) 0.9s forwards;
 }
-@keyframes coverLine { to { width: 10rem; } }
+@keyframes coverLine { to { width: 6.5rem; } }
 .v5-cover-subtitle {
   font-size: clamp(14px, 1.45vw, 19px);
   font-weight: 400;
-  color: rgba(255,255,255,0.88);
+  color: rgba(245,243,239,0.78);
   max-width: 54ch;
-  line-height: 1.65;
-  margin-top: 1.8rem;
+  line-height: 1.6;
+  margin-top: 1.6rem;
   letter-spacing: 0.01em;
 }
 .v5-cover-top { margin-bottom: 2vh; }
-.v5-cover-arrow { color: var(--gold); }
+.v5-cover-title { align-self: start; }
+.v5-cover-arrow { color: rgba(245,243,239,0.55); }
 
 /* P1 — Fermeture lightbox (overlay JS) */
 .js-lb-close {
@@ -1243,6 +1258,55 @@ html, body {
   .reco-row { grid-template-columns: 3rem 1fr; gap: 1rem; }
   .reco-row .reco-status { grid-column: 2; padding-top: 0.3rem; }
 }
+
+/* ===== Reconnaissances — refonte spotlight (chiffre-héros + distinctions) ===== */
+.reco-spotlight{background:var(--ink);color:#EFEBDF;margin:-12vh -7vw 8rem;padding:11vh 7vw 9vh;}
+.reco-spot-kicker{font-size:9pt;font-weight:700;letter-spacing:0.34em;text-transform:uppercase;color:#8f897c;margin:0 0 5vh;}
+.reco-spot-hero{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;margin-bottom:6vh;}
+.reco-spot-count{font-size:clamp(7rem,18vw,16rem);font-weight:800;line-height:0.72;letter-spacing:-0.05em;color:#F4F1E9;margin:0;}
+.reco-spot-headline{margin:0;font-size:clamp(3rem,7vw,6rem);font-weight:800;letter-spacing:-0.04em;line-height:0.9;color:#F4F1E9;text-transform:none;}
+.reco-spot-sub{margin:1.4rem 0 0;font-size:9.5pt;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:#8f897c;}
+.reco-spot-note{max-width:820px;margin:0 0 4rem;padding:1rem 1.2rem;background:rgba(255,255,255,0.05);font-size:9.5pt;line-height:1.55;color:#c9c3b4;}
+.reco-spot-note strong{color:#F4F1E9;font-weight:900;letter-spacing:0.02em;}
+.reco-spot-list{list-style:none;margin:0;padding:0;}
+.reco-spot-row{display:grid;grid-template-columns:5.5rem 1fr auto;gap:2rem;align-items:baseline;padding:1.9rem 0;border-top:1px solid rgba(255,255,255,0.13);}
+.reco-spot-row:last-child{border-bottom:1px solid rgba(255,255,255,0.13);}
+.reco-spot-year{font-size:13pt;font-weight:800;letter-spacing:0.03em;font-variant-numeric:tabular-nums;color:#b6b0a2;}
+.reco-spot-name{display:block;font-size:clamp(1.3rem,1.75vw,1.65rem);font-weight:700;letter-spacing:-0.01em;line-height:1.12;color:#F4F1E9;}
+.reco-spot-proj{display:block;margin-top:0.55rem;font-size:9.5pt;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#8f897c;}
+.reco-spot-status{font-size:8.5pt;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;white-space:nowrap;color:#8f897c;padding-top:0.6rem;}
+.reco-spot-status.is-win{color:#F4F1E9;font-weight:800;}
+@media (max-width:760px){.reco-spotlight{margin:-8vh -6vw 5rem;padding:9vh 6vw 7vh;}.reco-spot-hero{grid-template-columns:1fr;gap:0.6rem;}.reco-spot-count{font-size:clamp(6rem,30vw,9rem);}.reco-spot-row{grid-template-columns:3.4rem 1fr;}.reco-spot-status{grid-column:2;padding-top:0.3rem;}}
+/* ===== Cartouche transformation SUBTRACT & ADD (dark, monochrome) ===== */
+.cart-transfo{background:var(--ink);color:#EFEBDF;padding:clamp(2rem,4vw,3.4rem);margin:1.6rem 0 0;font-family:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace;}
+.project-header .cart-transfo{grid-column:1 / -1;width:100%;margin-top:0;}
+.ct-kicker{font-size:9pt;font-weight:400;letter-spacing:0.34em;text-transform:uppercase;color:#8f897c;margin:0 0 1.9rem;}
+.ct-hero{display:flex;align-items:center;gap:clamp(1.4rem,5vw,4rem);flex-wrap:wrap;margin-bottom:2.6rem;}
+.ct-num{font-family:'Darker Grotesque',sans-serif;font-weight:900;font-size:clamp(3.6rem,9vw,7rem);line-height:0.82;letter-spacing:-0.045em;color:#F4F1E9;display:block;}
+.ct-num .ct-unit{font-size:0.42em;font-weight:800;letter-spacing:0;}
+.ct-metric.is-sub .ct-num{color:#cbc5b6;}
+.ct-cap{display:block;margin-top:0.55rem;font-size:8.5pt;letter-spacing:0.22em;text-transform:uppercase;color:#8f897c;}
+.ct-arrow{font-family:'Darker Grotesque',sans-serif;font-size:clamp(2rem,5vw,3.4rem);color:#8f897c;line-height:1;}
+.ct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.7rem 2.5rem;border-top:1px solid rgba(255,255,255,0.14);padding-top:2.1rem;}
+.ct-k{display:block;font-size:8pt;letter-spacing:0.2em;text-transform:uppercase;color:#8f897c;margin-bottom:0.55rem;}
+.ct-v{display:block;font-size:12pt;color:#F4F1E9;letter-spacing:0.01em;}
+.ct-s{display:block;margin-top:0.3rem;font-size:9pt;color:#8f897c;line-height:1.4;}
+.ct-reco{margin-top:2.3rem;border-top:1px solid rgba(255,255,255,0.14);padding-top:1.9rem;display:grid;grid-template-columns:7.5rem 1fr;gap:0.9rem 1.6rem;align-items:baseline;}
+.ct-reco-head{grid-column:1/-1;font-size:9pt;letter-spacing:0.28em;text-transform:uppercase;color:#8f897c;margin:0 0 0.3rem;}
+.ct-reco-k{font-size:8pt;letter-spacing:0.18em;text-transform:uppercase;color:#8f897c;padding-top:0.15rem;}
+.ct-reco-v{font-family:'Darker Grotesque',sans-serif;font-size:13pt;font-weight:500;color:#EFEBDF;line-height:1.4;}
+.ct-reco-v em{font-style:italic;color:#c9c3b4;}
+.ct-more{margin-top:1.9rem;}
+.ct-more a{font-size:9pt;letter-spacing:0.18em;text-transform:uppercase;color:#8f897c;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:2px;}
+.ct-more a:hover{color:#F4F1E9;}
+.cart-transfo.cart-data .ct-grid{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));}
+.cart-transfo .ct-metric.is-add .ct-num{color:var(--gold);}
+.cart-transfo .ct-arrow{color:var(--gold);}
+.cart-transfo .ct-reco-head{color:var(--gold);font-weight:700;}
+.cart-transfo .ct-star{color:var(--gold);margin-right:0.4em;}
+.cart-transfo .ct-kicker::before{content:"Transformation \2014 ";color:var(--gold);font-weight:700;}
+@media (max-width:760px){.ct-grid{grid-template-columns:1fr 1fr;}.ct-reco{grid-template-columns:5rem 1fr;}}
+
 
 
 /* ===== Mention prix inline dans chaque projet ===== */
@@ -1629,9 +1693,10 @@ html, body {
 
 /* === Intercalaires renforces (narrateur) === */
 .chapter-opener {
-  border-top: 6px solid var(--ink) !important;
-  padding: 9rem 8vw 7rem !important;
-  min-height: 80vh;
+  border-top: 10px solid var(--ink) !important;
+  margin-top: 5rem;
+  padding: 12rem 8vw 9rem !important;
+  min-height: 86vh;
   display: flex; flex-direction: column; justify-content: center;
   max-width: none !important;
   page-break-before: always;
@@ -1660,12 +1725,13 @@ html, body {
 .chapter-opener::before {
   content: attr(data-num);
   display: block;
-  font-size: clamp(160px, 22vw, 320px);
-  font-weight: 800;
+  font-family: Arial, 'Helvetica Neue', sans-serif;
+  font-size: clamp(140px, 18vw, 260px);
+  font-weight: 700;
   line-height: 0.85;
-  letter-spacing: -0.05em;
+  letter-spacing: 0.02em;
   color: var(--ink);
-  margin: 0 0 1.5rem -8px;
+  margin: 0 0 1.5rem 0;
 }
 .chapter-opener h2 {
   font-size: clamp(64px, 8vw, 112px) !important;
@@ -1817,12 +1883,18 @@ html, body {
 .project-num-line { order: 1; }
 .project-title > h3 {
   order: 2;
-  font-size: clamp(22px, 2.4vw, 38px) !important;
-  font-weight: 700 !important;
+  font-size: clamp(40px, 5vw, 72px) !important;
+  font-weight: 800 !important;
   color: var(--ink) !important;
-  line-height: 1.3 !important;
-  letter-spacing: 0.01em;
+  line-height: 0.98 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 0.7rem !important;
 }
+/* Declutter: the cartouche now carries structure / certification / awards,
+   so hide the duplicated blocks that piled under the title */
+.project-title .cover-callback,
+.project-title .v3-perfo-block,
+.project-title .v3-distinctions-block { display: none !important; }
 .project-subtitle {
   order: 3;
   font-size: clamp(11px, 0.85vw, 13px);
@@ -1883,19 +1955,15 @@ html, body {
   </div>
 </nav>
 <!-- ============ COVER ============ -->
-<section class="v5-cover" id="cover"><div class="cover-eyebrow"><span class="cover-eyebrow-brand">NZI Architectes Urbanistes</span><span class="cover-eyebrow-year">Field Notebook · 2025–2026</span></div>
+<section class="v5-cover" id="cover"><div class="cover-eyebrow"><span class="cover-eyebrow-id"><img class="cover-eyebrow-logo" src="../media/nzi-logo-white.png" alt="NZI"><span class="cover-eyebrow-sub">Architectes Urbanistes</span></span><span class="cover-eyebrow-year">Paris · 2012</span></div>
 <div class="cover-hero"><img src="../media/descendez lentement - Cover.JPG" alt="Descendez lentement — NZI chantier"></div>
-<div class="v5-cover-top">
-<span>NZI Architectes Urbanistes</span>
-<span>Paris · 2012</span>
-</div>
 <div class="v5-cover-title">
-<div class="v5-cover-kicker">Notebook 2025–2026</div>
-<h1 class="v5-cover-h1">Transformations</h1>
+<div class="v5-cover-kicker">Field Notebook — 2025 / 2026</div>
+<h1 class="v5-cover-h1">Biosourced Transformations</h1>
 <div class="v5-cover-subtitle">Seventeen transformation projects — social housing, civic and cultural buildings — delivered, on site or in design.</div>
 </div>
 <div class="v5-cover-bottom">
-<span>26 rue Miguel Hidalgo · 75019 Paris · nzi.fr</span>
+<span>24 rue Miguel Hidalgo · 75019 Paris · nzi.fr</span>
 <span class="v5-cover-arrow">↓</span>
 </div>
 </section>
@@ -1908,7 +1976,7 @@ html, body {
 <p class="lead">NZI · Paris · 2012. These seventeen projects are not the sum of our work — they are its living part today: what is on our desks, on our sites, before our juries.</p>
 <div class="signature">NZI · May 2026</div>
 </section>
-<section class="agence-chiffres" id="agence"><header class="ac-head"><h2 class="ac-title">The practice in figures</h2><span class="ac-meta">NZI · Paris · since 2012</span></header><div class="ac-grid"><div class="ac-cell"><span class="ac-num">2012</span><span class="ac-lbl">Founded</span></div><div class="ac-cell"><span class="ac-num">20<span class="ac-unit">buildings</span></span><span class="ac-lbl">Delivered since 2012</span></div><div class="ac-cell"><span class="ac-num">17<span class="ac-unit">projects</span></span><span class="ac-lbl">Active · 2025–2026</span></div><div class="ac-cell"><span class="ac-num">15<span class="ac-unit">architects</span></span><span class="ac-lbl">Current staff</span></div><div class="ac-cell"><span class="ac-num">22</span><span class="ac-lbl">Awards 2017–2026</span></div><div class="ac-cell"><span class="ac-num">31</span><span class="ac-lbl">Lectures &amp; exhibitions</span></div></div><div class="ac-signataires"><div class="ac-signataire"><span class="ac-nom">Sandra de Giorgio</span><span class="ac-role">Co-founder · architect DPLG · partner</span></div><div class="ac-signataire"><span class="ac-nom">Gianluca Gaudenzi</span><span class="ac-role">Co-founder · architect DPLG · partner</span></div></div></section>
+<section class="agence-chiffres" id="agence"><header class="ac-head"><h2 class="ac-title">The practice in figures</h2><span class="ac-meta">NZI · Paris · since 2012</span></header><div class="ac-grid"><div class="ac-cell"><span class="ac-num">2012</span><span class="ac-lbl">Founded</span></div><div class="ac-cell"><span class="ac-num">20<span class="ac-unit">buildings</span></span><span class="ac-lbl">Delivered since 2012</span></div><div class="ac-cell"><span class="ac-num">17<span class="ac-unit">projects</span></span><span class="ac-lbl">Active · 2025–2026</span></div><div class="ac-cell"><span class="ac-num">15<span class="ac-unit">architects</span></span><span class="ac-lbl">Current staff</span></div><div class="ac-cell"><span class="ac-num">22</span><span class="ac-lbl">Awards 2017–2026</span></div><div class="ac-cell"><span class="ac-num">32</span><span class="ac-lbl">Lectures &amp; exhibitions</span></div></div><div class="ac-signataires"><div class="ac-signataire"><span class="ac-nom">Sandra de Giorgio</span><span class="ac-role">Co-founder · architect DPLG · partner</span></div><div class="ac-signataire"><span class="ac-nom">Gianluca Gaudenzi</span><span class="ac-role">Co-founder · architect DPLG · partner</span></div></div></section>
 <!-- ============ DISTINCTIONS ============ -->
 
 <section class="chapter-opener" id="ch-transformations" data-num="I">
@@ -1934,12 +2002,12 @@ html, body {
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">CLT + timber frame on retained car park structure</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">NF Habitat HQE · Effinergie rénovation</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E3C1 · Bio-sourced label level 1</div></div>
 <div class="v3-distinctions-block"><div class="v3-distinctions-key">Awards &amp; recognition</div><div class="v3-distinctions-list"><div class="v3-dist-item"><span class="v3-dist-status">Press coverage</span>vague Q1 2026 — Batiactu, Batirama, Construction21, Archicree, Chroniques d'Architecture, Architectura.be (BE), BauNetz.de, polis Magazin, Bauwende-News (DE), Metalocus (ES), Les Echos</div><div class="v3-dist-item"><span class="v3-dist-status">Exhibition</span>Pavillon de l'Arsenal — « Conserver Adapter Transmettre » 2026</div></div></div>
 </div>
-<div class="cart-v3"><div class="v3-preamble"><div class="v3-bloc-recit"><div class="v3-recit-rule"></div><div class="v3-bloc-title">Feature story</div><p>We are taught to add. We do the opposite: we remove floor area to find quality.</p><a href="#recit">Read the full story ↓</a></div></div><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">9 M€</span><span class="sub">2 143 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">4 200 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Hénéo / RIVP</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">Delivered 2025</span><span class="sub">CLT structure · PAVATEX insulation · timber windows</span></div></div></div></header>
+<div class="cart-transfo"><div class="ct-kicker">Subtract &amp; add</div><div class="ct-hero"><div class="ct-metric is-sub"><span class="ct-num">−2 000<span class="ct-unit">m²</span></span><span class="ct-cap">Car parking removed</span></div><span class="ct-arrow">→</span><div class="ct-metric is-add"><span class="ct-num">+83</span><span class="ct-cap">Social housing units</span></div></div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">9 M€</span><span class="ct-s">2 143 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">4 200 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Density reversed</span><span class="ct-v">4 500 → 2 500 m²</span><span class="ct-s">parking → housing</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Hénéo / RIVP</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Structure</span><span class="ct-v">CLT + timber frame</span><span class="ct-s">on retained car-park frame · PAVATEX</span></div><div class="ct-item"><span class="ct-k">Certification</span><span class="ct-v">NF Habitat HQE</span><span class="ct-s">Effinergie réno · E3C1 · bio-sourced lvl 1</span></div></div><div class="ct-reco"><div class="ct-reco-head">Awards · 3 distinctions</div><div class="ct-reco-k"><span class="ct-star">★</span>2027</div><div class="ct-reco-v">best architects 27 — winner · Gold label</div><div class="ct-reco-k">2026</div><div class="ct-reco-v">Prix Régional de la Construction Bois, Fibois Île-de-France — winner</div><div class="ct-reco-k">2026</div><div class="ct-reco-v">2nd European Collective Housing Award — finalist</div><div class="ct-reco-head" style="margin-top:1.6rem;">Recognition</div><div class="ct-reco-k">Exhibition</div><div class="ct-reco-v">Pavillon de l’Arsenal — <em>Conserver, Adapter, Transmettre</em>, 2026</div><div class="ct-reco-k">Lecture</div><div class="ct-reco-v">Forum Bois Construction 2025 · Maison de l’Architecture, Paris 2023</div><div class="ct-reco-k">Press</div><div class="ct-reco-v">Wave Q1 2026 — Batiactu · Batirama · Construction21 · Archicree · Chroniques d’Architecture · Les Échos · Architectura.be (BE) · BauNetz.de · polis Magazin · Bauwende-News (DE) · Metalocus (ES)</div></div><div class="ct-more"><a href="#recit">Read the full story ↓</a></div></div></header>
 <div class="project-description">
 <p>The plot, entirely landlocked, would have constrained any new construction. We chose to retain and restructure, demolishing a full bay on the north-south axis to open sunlight into the heart of the block and create deep visual breaks.</p><p>Timber structure, densification reversal (4,500 m² of parking brought down to 2,500 m² of housing), social housing programme, Hénéo / RIVP.</p>
 </div>
 <div class="project-prize"><span class="label">Press coverage — wave Q1 2026</span><div class="value">Batiactu (26/01/2026, Steve Carpentier) · Batirama (28/01/2026, Pascal Poggi) · Construction21 · Archicree · Chroniques d'Architecture · Architectura.be (Belgique) · BauNetz.de · polis Magazin · Bauwende-News (Allemagne) · Metalocus (Espagne) · Les Echos · Pavillon de l'Arsenal — exposition « Conserver Adapter Transmettre »</div></div>
-<div class="v3-project-grid"><div class="v3-hero" id="v3-nollet-0"><a class="v3-open" href="#v3-nollet-14"><img src="../media/10_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="10_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(-30.821px);"></a></div><div class="v3-row v3-row-4"><div class="v3-slot v3-slot-43" id="v3-nollet-schema"><a class="v3-open" href="#v3-nollet-schema"><img src="../media/nollet-schema-transformation.gif" alt="Schema transformation Nollet" class="schema-gif" style="transform: scale(1.09) translateY(-21.4132px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-1"><a class="v3-open" href="#v3-nollet-1"><img src="../media/1J1A4620.jpg" alt="1J1A4620.jpg" style="transform: scale(1.09) translateY(-21.4132px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-2"><a class="v3-open" href="#v3-nollet-2"><img src="../media/1J1A4595.jpg" alt="1J1A4595.jpg" style="transform: scale(1.09) translateY(-21.4132px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-3"><a class="v3-open" href="#v3-nollet-3"><img src="../media/15-photo chantier Nollet pelleteuse.jpg" alt="15-photo chantier Nollet pelleteuse.jpg" style="transform: scale(1.09) translateY(-21.4132px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-4"><a class="v3-open" href="#v3-nollet-4"><img src="../media/NOLLET_009.jpg" alt="NOLLET_009.jpg" style="transform: scale(1.09) translateY(-22.8415px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-5"><a class="v3-open" href="#v3-nollet-8"><img src="../media/20_NZI_NOLLET_Existant_WEB.jpg" alt="20_NZI_NOLLET_Existant_WEB.jpg" style="transform: scale(1.09) translateY(-22.8415px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-6"><a class="v3-open" href="#v3-nollet-6"><img src="../media/17_NZI_NOLLET_Chantier_WEB.jpg" alt="17_NZI_NOLLET_Chantier_WEB.jpg" style="transform: scale(1.09) translateY(-22.8415px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-7"><a class="v3-open" href="#v3-nollet-7"><img src="../media/IMG_5196.JPG" alt="IMG_5196.JPG" style="transform: scale(1.09) translateY(-17.0649px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-8"><a class="v3-open" href="#v3-nollet-5"><img src="../media/IMG_0240.JPG" alt="IMG_0240.JPG" style="transform: scale(1.09) translateY(-17.0649px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-9"><a class="v3-open" href="#v3-nollet-9"><img src="../media/21_NZI_NOLLET_GENERE_WEB.jpg" alt="21_NZI_NOLLET_GENERE_WEB.jpg" style="transform: scale(1.09) translateY(-17.0649px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-10"><a class="v3-open" href="#v3-nollet-10"><img src="../media/3_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="3_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(-4.51068px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-11"><a class="v3-open" href="#v3-nollet-0"><img src="../media/6_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="Rue Nollet — façade sawtooth (© Frédéric Delangle)" style="transform: scale(1.09) translateY(-4.51068px); object-position: 60.3% 0%;" class=""></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-12"><a class="v3-open" href="#v3-nollet-12"><img src="../media/2_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="2_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(-4.51068px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-13"><a class="v3-open" href="#v3-nollet-13"><img src="../media/9_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="9_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(8.04354px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-14"><a class="v3-open" href="#v3-nollet-11"><img src="../media/1_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="1_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(8.04354px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-15"><a class="v3-open" href="#v3-nollet-15"><img src="../media/14_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="14_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(8.04354px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-16"><a class="v3-open" href="#v3-nollet-16"><img src="../media/4_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="4_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(20.5978px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-17"><a class="v3-open" href="#v3-nollet-17"><img src="../media/12_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="12_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(20.5978px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-18"><a class="v3-open" href="#v3-nollet-18"><img src="../media/8_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="8_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(20.5978px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-19"><a class="v3-open" href="#v3-nollet-19"><img src="../media/11_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="11_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(30.1245px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-20"><a class="v3-open" href="#v3-nollet-20"><img src="../media/5_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="5_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(30.1245px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-21"><a class="v3-open" href="#v3-nollet-21"><img src="../media/7_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="7_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(30.1245px);"></a></div></div><div class="v3-hero" id="v3-nollet-22"><a class="v3-open" href="#v3-nollet-22"><img src="../media/NOLLET1-35.jpg" alt="NOLLET1-35.jpg" style="transform: none !important;"></a></div></div>
+<div class="v3-project-grid"><div class="v3-hero" id="v3-nollet-0"><a class="v3-open" href="#v3-nollet-0"><img src="../media/Nollet-aerienne-existant-drone.jpg" alt="Nollet — aerial view of the existing car park before transformation (drone, 17th arr. Paris)" style="transform: none !important;"></a></div><div class="v3-row v3-row-4"><div class="v3-slot v3-slot-43" id="v3-nollet-schema"><a class="v3-open" href="#v3-nollet-schema"><img src="../media/nollet-schema-transformation.gif" alt="Schema transformation Nollet" class="schema-gif" style="transform: scale(1.09) translateY(-21.4132px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-1"><a class="v3-open" href="#v3-nollet-1"><img src="../media/1J1A4620.jpg" alt="1J1A4620.jpg" style="transform: scale(1.09) translateY(-21.4132px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-2"><a class="v3-open" href="#v3-nollet-2"><img src="../media/1J1A4595.jpg" alt="1J1A4595.jpg" style="transform: scale(1.09) translateY(-21.4132px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-3"><a class="v3-open" href="#v3-nollet-3"><img src="../media/15-photo chantier Nollet pelleteuse.jpg" alt="15-photo chantier Nollet pelleteuse.jpg" style="transform: scale(1.09) translateY(-21.4132px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-4"><a class="v3-open" href="#v3-nollet-4"><img src="../media/NOLLET_009.jpg" alt="NOLLET_009.jpg" style="transform: scale(1.09) translateY(-22.8415px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-5"><a class="v3-open" href="#v3-nollet-8"><img src="../media/20_NZI_NOLLET_Existant_WEB.jpg" alt="20_NZI_NOLLET_Existant_WEB.jpg" style="transform: scale(1.09) translateY(-22.8415px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-6"><a class="v3-open" href="#v3-nollet-6"><img src="../media/17_NZI_NOLLET_Chantier_WEB.jpg" alt="17_NZI_NOLLET_Chantier_WEB.jpg" style="transform: scale(1.09) translateY(-22.8415px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-7"><a class="v3-open" href="#v3-nollet-7"><img src="../media/IMG_5196.JPG" alt="IMG_5196.JPG" style="transform: scale(1.09) translateY(-17.0649px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-8"><a class="v3-open" href="#v3-nollet-5"><img src="../media/IMG_0240.JPG" alt="IMG_0240.JPG" style="transform: scale(1.09) translateY(-17.0649px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-9"><a class="v3-open" href="#v3-nollet-9"><img src="../media/21_NZI_NOLLET_GENERE_WEB.jpg" alt="21_NZI_NOLLET_GENERE_WEB.jpg" style="transform: scale(1.09) translateY(-17.0649px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-10"><a class="v3-open" href="#v3-nollet-10"><img src="../media/3_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="3_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(-4.51068px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-11"><a class="v3-open" href="#v3-nollet-0"><img src="../media/6_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="Rue Nollet — façade sawtooth (© Frédéric Delangle)" style="transform: scale(1.09) translateY(-4.51068px); object-position: 60.3% 0%;" class=""></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-12"><a class="v3-open" href="#v3-nollet-12"><img src="../media/2_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="2_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(-4.51068px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-13"><a class="v3-open" href="#v3-nollet-13"><img src="../media/9_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="9_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(8.04354px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-14"><a class="v3-open" href="#v3-nollet-11"><img src="../media/1_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="1_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(8.04354px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-15"><a class="v3-open" href="#v3-nollet-15"><img src="../media/14_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="14_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(8.04354px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-16"><a class="v3-open" href="#v3-nollet-16"><img src="../media/4_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="4_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(20.5978px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-17"><a class="v3-open" href="#v3-nollet-17"><img src="../media/12_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="12_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(20.5978px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-18"><a class="v3-open" href="#v3-nollet-18"><img src="../media/8_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="8_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(20.5978px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-nollet-19"><a class="v3-open" href="#v3-nollet-19"><img src="../media/11_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="11_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(30.1245px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-20"><a class="v3-open" href="#v3-nollet-20"><img src="../media/5_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="5_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(30.1245px);"></a></div><div class="v3-slot v3-slot-43" id="v3-nollet-21"><a class="v3-open" href="#v3-nollet-21"><img src="../media/7_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" alt="7_NZI_NOLLET_LDD_Frederic_Delangle_WEB.jpg" style="transform: scale(1.09) translateY(30.1245px);"></a></div></div><div class="v3-hero" id="v3-nollet-22"><a class="v3-open" href="#v3-nollet-22"><img src="../media/NOLLET1-35.jpg" alt="NOLLET1-35.jpg" style="transform: none !important;"></a></div></div>
 <div class="conference-series" aria-label="Photos — Nollet"><div class="cs-grid"></div></div>
 </article>
 <article class="project">
@@ -1952,11 +2020,11 @@ html, body {
 <h3 id="proj-bertelotte">Transforming a 1970s office building into 145 student rooms · timber-and-straw · Paris 15<sup>th</sup></h3>
 <div class="project-subtitle">Bertelotte — site Avia</div>
 <div class="project-prizes">Lauréat Architizer A+ Awards 2022<span class="pp-sep">·</span>Mention UIA 2030<span class="pp-sep">·</span><span class="pp-more">6 awards — <a href="#reconnaissances">see</a></span></div>
-<div class="project-filiere"><span class="pf-label">Method</span><span class="pf-value">Bois + paille</span></div>
+<div class="project-filiere"><span class="pf-label">Method</span><span class="pf-value">Timber + straw</span></div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Timber-and-straw construction</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Cerqual Patrimoine BBC rénovation · Plan Climat</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">RT 2012 -20%</div></div>
 <div class="v3-distinctions-block"><div class="v3-distinctions-key">Awards &amp; recognition</div><div class="v3-distinctions-list"><div class="v3-dist-item"><span class="v3-dist-status">Honourable mention</span>UIA 2030 / ONU-Habitat 2022</div><div class="v3-dist-item"><span class="v3-dist-status">Winner</span>Architizer A+ Awards 2022 (Affordable Design)</div><div class="v3-dist-item"><span class="v3-dist-status">Winner</span>Trophées de la Construction 2022</div><div class="v3-dist-item"><span class="v3-dist-status">Winner</span>Prix Construction Bois IDF 2021</div><div class="v3-dist-item"><span class="v3-dist-status">Finalist</span>Grand Prix SIMI 2022</div><div class="v3-dist-item"><span class="v3-dist-status">Longlist</span>Dezeen Awards 2022</div></div></div>
 </div>
-<div class="cart-v3"><div class="v3-preamble"><div class="v3-bloc-reco"><div class="v3-bloc-title">Awards · 6 distinctions</div><ul><li><strong>Architizer A+ Awards</strong> <span class="year">2022</span><span class="status">— Lauréat</span></li><li><strong>UIA 2030 ONU-Habitat</strong> <span class="year">2022</span><span class="status">— Mention</span></li><li><strong>Construction Bois IDF</strong> <span class="year">2021</span><span class="status">— Lauréat</span></li></ul><div class="more">+ 3 more — <a href="#reconnaissances">see index →</a></div></div></div><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">8,8 M€</span><span class="sub">2 000 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">4 400 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Paris Habitat</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">Delivered 2021</span><span class="sub">Timber + straw · –125 t CO₂ vs new-build</span></div></div></div></header>
+<div class="cart-transfo cart-data"><div class="ct-kicker">1970s office building → 145 student rooms</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">8,8 M€</span><span class="ct-s">2 000 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">4 400 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Paris Habitat</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">Delivered 2021</span><span class="ct-s">Timber + straw · –125 t CO₂ vs new-build</span></div></div><div class="ct-reco"><div class="ct-reco-head">Awards · 6 distinctions</div><div class="ct-reco-k"><span class="ct-star">★</span>2022</div><div class="ct-reco-v">Architizer A+ Awards — winner</div><div class="ct-reco-k">2022</div><div class="ct-reco-v">UIA 2030 ONU-Habitat — special mention</div><div class="ct-reco-k">2021</div><div class="ct-reco-v">Construction Bois IDF — winner</div></div><div class="ct-more"><a href="#reconnaissances">See the full index ↓</a></div></div></header>
 <div class="project-description">
 <p>Transformation of a 4,400 m² office building into a student residence. Major refurbishment with a rooftop extension: one and a half structural bays were demolished to allow direct sunlight to reach the centre of the building.</p><p>Timber frame construction, bio-sourced straw insulation — timber frame + compressed straw bales 36 cm thick, factory-made in dry process. Straw sourced from Île-de-France.</p>
 </div>
@@ -1972,10 +2040,10 @@ html, body {
 <h3 id="proj-cmi">Transforming a chalk factory into a museum of religions · cultural hub · auditorium — Issy-les-Moulineaux</h3>
 <div class="project-subtitle">Musée des religions — CMI Issy</div>
 <div class="project-transform"><span class="pt-label">Transformation</span><span class="pt-detail">subtraction and/or addition</span><a href="#ch-transformations">→ Ch. III</a></div>
-<div class="project-filiere"><span class="pf-label">Method</span><span class="pf-value">Bois + terre crue (pisé)</span></div>
+<div class="project-filiere"><span class="pf-label">Method</span><span class="pf-value">Timber + rammed earth</span></div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Chalk factory conversion · retained structure</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">E3C1 · energy retrofit</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">Timber construction · rammed earth</div></div>
 </div>
-<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">8,85 M€</span><span class="sub">2 950 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">3 000 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Ville d'Issy-les-Moulineaux</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">In design</span><span class="sub">Delivery Q2 2028 · Timber structure · rammed earth · retained steel volumes</span></div></div><div class="v3-prg"><span class="micro">Programme</span> · <a href="#ch-transformations">Transformations → Ch. III</a></div></div></header><div class="project-description">
+<div class="cart-transfo cart-data"><div class="ct-kicker">Chalk factory → museum & cultural hub</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">8,85 M€</span><span class="ct-s">2 950 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">3 000 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Ville d'Issy-les-Moulineaux</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">In design</span><span class="ct-s">Delivery Q2 2028 · Timber structure · rammed earth · retained steel volumes</span></div></div><div class="ct-more"><a href="#ch-transformations">Programme → Transformations, Ch. III</a></div></div></header><div class="project-description">
 </div><div class="v3-project-grid"><div class="v3-hero v3-hero-video" id="v3-cmi-0"><video autoplay="" loop="" muted="" playsinline="" controls="" preload="metadata"><source src="../media/cmi-video.mp4" type="video/mp4"></video></div><div class="v3-row v3-row-2"><div class="v3-slot v3-slot-43" id="v3-cmi-2"><a class="v3-open" href="#le-add-1779020343189-7w8j"><img src="../media/upload-f138ef27.png" alt="CMI_004.png" class="" style="object-position: 60.3% 100%; transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-cmi-3"><a class="v3-open" href="#v3-cmi-3"><img src="../media/CMI_005.jpg" alt="CMI_005.png" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-2"><div class="v3-slot v3-slot-43" id="v3-cmi-4"><a class="v3-open" href="#v3-cmi-4"><img src="../media/CMI_002.jpg" alt="CMI_002.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-cmi-5"><a class="v3-open" href="#v3-cmi-5"><img src="../media/blanqueterie_web.jpg" alt="blanqueterie_web.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="le-add-1779020343189-7w8j"><a class="v3-open" href="#v3-cmi-2"><img src="../media/cmi-schema-transformation.gif" alt="Schema transformation CMI" class="schema-gif" style="transform: none !important;"></a></div></div><div class="v3-hero" id="le-add-1778969288462-s34z"><a class="v3-open" href="#le-add-1778969288462-s34z"><img src="../media/NZI__210124 VUE I atrium 005.jpg" alt="NZI__210124 VUE I atrium 005.jpg" style="transform: none !important;"></a></div></div></article>
 <article class="project"><header class="project-header">
 <div class="project-title">
@@ -1987,7 +2055,7 @@ html, body {
 <div class="project-subtitle">Saint-Dizier</div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Timber (extension) · retained steel structure</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Cerqual HQE Tertiaire</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E3C1 · Timber construction</div></div>
 </div>
-<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">9,2 M€</span><span class="sub">2 190 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">4 200 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Ville de Saint-Dizier</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">In design</span><span class="sub">Delivery Q2 2027 · Timber structure (extension) · retained steel</span></div></div></div></header><div class="project-description">
+<div class="cart-transfo cart-data"><div class="ct-kicker">Decathlon store → multi-sport complex</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">9,2 M€</span><span class="ct-s">2 190 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">4 200 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Ville de Saint-Dizier</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">In design</span><span class="ct-s">Delivery Q2 2027 · Timber structure (extension) · retained steel</span></div></div></div></header><div class="project-description">
 </div><div class="v3-project-grid"><div class="v3-hero" id="v3-stdiz-0"><a class="v3-open" href="#v3-stdiz-0"><img src="../media/OTA_nzi_stdizier_frontale_HD.jpg" alt="OTA_nzi_stdizier_frontale_HD.jpg" style="transform: none !important;"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-stdiz-1"><a class="v3-open" href="#v3-stdiz-1"><img src="../media/uploaded-acabbb61e2.jpg" alt="03.2.3 AXONOMETRIE EXISTANT_DEMOL.jpg" class="" style="transform: none !important; object-position: 22% 50.3%;"></a></div><div class="v3-slot v3-slot-43" id="v3-stdiz-2"><a class="v3-open" href="#v3-stdiz-2"><img src="../media/uploaded-c086e23930.jpg" alt="20240314_141110.jpg" class="" style="transform: none !important; object-position: 60.9% 96.2%;"></a></div><div class="v3-slot v3-slot-43" id="v3-stdiz-3"><a class="v3-open" href="#v3-stdiz-3"><img src="../media/OTA_nzi_stdizier_patio_HD.jpg" alt="OTA_nzi_stdizier_patio_HD.jpg" class="" style="transform: none !important;"></a></div></div><div class="v3-hero" id="v3-stdiz-4"><a class="v3-open" href="#v3-stdiz-4"><img src="../media/OTA_nzi_stdizier_parvis_clair2.jpg" alt="OTA_nzi_stdizier_parvis_clair2.png" style="transform: none !important;"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="le-add-1778944761384-3xin"><a class="v3-open" href="#le-add-1778944761384-3xin"><img src="../media/uploaded-86fc1c3e4c.png" alt="Axo.png" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="le-add-1778944952291-mz87"><a class="v3-open" href="#le-add-1778944952291-mz87"><img src="../media/uploaded-5cd1392c21.jpg" alt="OTA_nzi_stdizier_gym_HD.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="le-add-1778945052662-likp"><a class="v3-open" href="#le-add-1778945052662-likp"><img src="../media/OTA_nzi_stdizier_hall_HD.jpg" alt="OTA_nzi_stdizier_hall_HD.jpg" style="transform: none !important;"></a></div></div></div></article>
 <article class="project">
 <header class="project-header">
@@ -1999,10 +2067,10 @@ html, body {
 <h3 id="proj-coquibus">School restructuring + rooftop extension · demolition, asbestos removal — Évry-Courcouronnes</h3>
 <div class="project-subtitle">Coquibus — Evry-Courcouronnes</div>
 <div class="project-transform"><span class="pt-label">Transformation</span><span class="pt-detail">subtraction and/or addition</span><a href="#ch-transformations">→ Ch. III</a></div>
-<div class="project-filiere"><span class="pf-label">Method</span><span class="pf-value">Bois + chanvre</span></div>
+<div class="project-filiere"><span class="pf-label">Method</span><span class="pf-value">Timber + hemp</span></div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Timber · hemp wool</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Timber construction · hemp insulation</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E3C2 · Bio-sourced label level 3</div></div>
 </div>
-<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">12 M€</span><span class="sub">2 927 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">4 100 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Ville d'Évry-Courcouronnes</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">Phase 1 delivered</span><span class="sub">On site phase 2 · Timber + hemp · demolition · asbestos removal · rooftop extension</span></div></div><div class="v3-prg"><span class="micro">Programme</span> · <a href="#ch-transformations">Transformations → Ch. III</a></div></div></header>
+<div class="cart-transfo cart-data"><div class="ct-kicker">School restructuring + rooftop extension</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">12 M€</span><span class="ct-s">2 927 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">4 100 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Ville d'Évry-Courcouronnes</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">Phase 1 delivered</span><span class="ct-s">On site phase 2 · Timber + hemp · demolition · asbestos removal · rooftop extension</span></div></div><div class="ct-more"><a href="#ch-transformations">Programme → Transformations, Ch. III</a></div></div></header>
 <div class="project-description">
 </div>
 <div class="v3-project-grid"><div class="v3-hero" id="v3-coquibus-0"><a class="v3-open" href="#v3-coquibus-0"><img src="../media/COQUIBUS-EVRY_chantier.jpg" alt="Chantier Evry — structure bois" style="transform: scale(1.09) translateY(-30.5033px);"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-coquibus-1"><a class="v3-open" href="#v3-coquibus-1"><img src="../media/coquibus-aerial-transformation.gif" alt="Coquibus — vue aerienne existant / projet" class="schema-gif" style="transform: scale(1.09) translateY(-22.5043px);"></a></div><div class="v3-slot v3-slot-43" id="v3-coquibus-2"><a class="v3-open" href="#v3-coquibus-2"><img src="../media/coquibus-schema-transformation.gif" alt="Coquibus — schema transformation 4 phases" class="schema-gif" style="transform: scale(1.09) translateY(-22.5043px);"></a></div><div class="v3-slot v3-slot-43" id="v3-coquibus-3"><a class="v3-open" href="#v3-coquibus-3"><img src="../media/COQUIBUS-EVRY_016.jpg" alt="Coquibus axonometrie" class="" style="transform: scale(1.09) translateY(-22.5043px);"></a></div></div><div class="v3-row v3-row-2"><div class="v3-slot v3-slot-43" id="le-add-1779011184876-e1w0"><a class="v3-open" href="#le-add-1779020431691-he7d"><img src="../media/upload-d2ae2dc1.png" alt="EVRY V2 4.png" style="transform: scale(1.09) translateY(7.7118px); object-position: 52.8% 92.8%;" class=""></a></div><div class="v3-slot v3-slot-43" id="le-add-1779015404175-sc7t"><a class="v3-open" href="#le-add-1779015404175-sc7t"><img src="../media/upload-d2ae2dc1.jpg" alt="EVRY V2 4.png" style="transform: scale(1.09) translateY(-25.9126px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="le-add-1779020431691-he7d"><a class="v3-open" href="#le-add-1779011184876-e1w0"><img src="../media/upload-6b24badd.jpg" alt="EVRY COUR 2.png" class="" style="transform: scale(1.09) translateY(-7.96267px); object-position: 50% 50%;"></a></div></div></div></article>
@@ -2014,10 +2082,10 @@ html, body {
 </div>
 <h3 id="proj-langevin">School restructuring · oasis courtyard · rammed earth — Nanterre</h3>
 <div class="project-subtitle">Langevin — Nanterre</div>
-<div class="project-filiere"><span class="pf-label">Method</span><span class="pf-value">Bois + pisé + terre crue</span></div>
+<div class="project-filiere"><span class="pf-label">Method</span><span class="pf-value">Timber + rammed earth</span></div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Timber · rammed earth · raw earth · hemp insulation</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Cerqual Patrimoine BBC · RT 2012 -30%</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E4C2 · Bio-sourced label level 3</div></div>
 </div>
-<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">7,9 M€</span><span class="sub">1 340 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">5 900 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Ville de Nanterre</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">In design</span><span class="sub">Delivery Q1 2028 · Timber + rammed earth · hemp</span></div></div></div></header><div class="project-description">
+<div class="cart-transfo cart-data"><div class="ct-kicker">School restructuring · oasis courtyard</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">7,9 M€</span><span class="ct-s">1 340 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">5 900 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Ville de Nanterre</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">In design</span><span class="ct-s">Delivery Q1 2028 · Timber + rammed earth · hemp</span></div></div></div></header><div class="project-description">
 </div><div class="v3-project-grid"><div class="v3-hero" id="v3-langevin-0"><a class="v3-open" href="#le-add-1778943550868-w0cq"><img src="../media/Ecole-Paul-Langevin_Day-View-b.jpg" alt="Ecole-Paul-Langevin_Day-View-b.jpg" class="" style="transform: scale(1.09) translateY(-30.7465px); object-position: 43.5% 40.8%;"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-langevin-1"><a class="v3-open" href="#v3-langevin-1"><img src="../media/uploaded-f9e90c90db.jpg" alt="existant-old.png" class="" style="transform: scale(1.09) translateY(-22.5717px); object-position: 48.8% 100%;"></a></div><div class="v3-slot v3-slot-43" id="v3-langevin-2"><a class="v3-open" href="#v3-langevin-0"><img src="../media/Ecole-Paul-Langevin_Aerial-View.jpg" alt="Ecole-Paul-Langevin_Aerial-View.png" style="transform: scale(1.09) translateY(-22.5717px);"></a></div><div class="v3-slot v3-slot-43" id="v3-langevin-3"><a class="v3-open" href="#v3-langevin-3"><img src="../media/NANTERRE-LANGEVIN_003.jpg" alt="NANTERRE-LANGEVIN_003.jpg" style="transform: scale(1.09) translateY(-22.5717px);"></a></div></div><div class="v3-row v3-row-2"><div class="v3-slot v3-slot-43" id="le-add-1778943550850-19na"><a class="v3-open" href="#le-add-1778943550850-19na"><img src="../media/uploaded-92e7393da1.png" alt="Coupe detail.png" style="transform: scale(1.09) translateY(-25.648px);"></a></div><div class="v3-slot v3-slot-43" id="le-add-1778943550868-w0cq"><a class="v3-open" href="#v3-langevin-2"><img src="../media/uploaded-45e7b57802.png" alt="Extension.png" style="transform: scale(1.09) translateY(-25.648px);"></a></div></div></div></article>
 
 <!-- ============ II — PUBLIC BUILDINGS ============ -->
@@ -2043,7 +2111,7 @@ html, body {
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">CLT + timber frame · 10,000 m²</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Timber construction · BDF Silver</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E3C2 · Bio-sourced label level 3</div></div>
 <div class="v3-distinctions-block"><div class="v3-distinctions-key">Awards &amp; recognition</div><div class="v3-distinctions-list"><div class="v3-dist-item"><span class="v3-dist-status">Winner</span>APEX (Architectures Parisiennes Exemplaires) 2025</div><div class="v3-dist-item"><span class="v3-dist-status">Winner</span>AMI Bâti Sobre (ADEME) 2025</div><div class="v3-dist-item"><span class="v3-dist-status">Enrolled</span>ZAC Python-Duvernois, lauréate du Trophée BBCA Quartier Bas Carbone 2024 (SEMAPA aménageur)</div></div></div>
 </div>
-<div class="cart-v3"><div class="v3-preamble"><div class="v3-bloc-reco"><div class="v3-bloc-title">Awards · 3 distinctions</div><ul><li><strong>AMI Bâti Sobre</strong> <span class="year">2025</span><span class="status">— Lauréat ADEME</span></li><li><strong>APEX Paris</strong> <span class="year">2025</span><span class="status">— Lauréat</span></li><li><strong>BBCA Quartier Bas Carbone</strong> <span class="year">2024</span><span class="status">— Lauréat</span></li></ul><div class="more"><a href="#reconnaissances">See index →</a></div></div></div><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">36 M€</span><span class="sub">3 600 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">10 000 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Ville de Paris · SEMAPA (aménageur)</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">In design</span><span class="sub">Delivery Q2 2027 · Timber structure · 60 kg timber/m² GFA</span></div></div></div></header><div class="v3-project-grid"><div class="v3-hero" id="v3-python-0"><a class="v3-open" href="#v3-python-0"><img src="../media/PYTHON-DUVERNOIS_001.jpg" alt="PYTHON-DUVERNOIS_001.jpg" style="transform: none !important;"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-python-1"><a class="v3-open" href="#v3-python-1"><img src="../media/PYTHON-DUVERNOIS_002.jpg" alt="PYTHON-DUVERNOIS_002.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-python-2"><a class="v3-open" href="#v3-python-2"><img src="../media/PYTHON-DUVERNOIS_006.jpg" alt="PYTHON-DUVERNOIS_006.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-python-3"><a class="v3-open" href="#v3-python-3"><img src="../media/PYTHON-DUVERNOIS_008.jpg" alt="PYTHON-DUVERNOIS_008.jpg" style="transform: none !important;"></a></div></div><div class="v3-hero" id="v3-python-4"><a class="v3-open" href="#v3-python-4"><img src="../media/OTA_NZI_PYTHON_EXT3_HD.jpg" alt="OTA_NZI_PYTHON_EXT3_HD.jpg" style="transform: none !important;"></a></div></div></article>
+<div class="cart-transfo cart-data"><div class="ct-kicker">Cité des sports · stacked gymnasiums</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">36 M€</span><span class="ct-s">3 600 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">10 000 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Ville de Paris · SEMAPA (aménageur)</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">In design</span><span class="ct-s">Delivery Q2 2027 · Timber structure · 60 kg timber/m² GFA</span></div></div><div class="ct-reco"><div class="ct-reco-head">Awards · 3 distinctions</div><div class="ct-reco-k"><span class="ct-star">★</span>2025</div><div class="ct-reco-v">AMI Bâti Sobre — ADEME winner</div><div class="ct-reco-k">2025</div><div class="ct-reco-v">APEX Paris — winner</div><div class="ct-reco-k">2024</div><div class="ct-reco-v">BBCA Quartier Bas Carbone — winner</div></div><div class="ct-more"><a href="#reconnaissances">See the full index ↓</a></div></div></header><div class="v3-project-grid"><div class="v3-hero" id="v3-python-0"><a class="v3-open" href="#v3-python-0"><img src="../media/PYTHON-DUVERNOIS_001.jpg" alt="PYTHON-DUVERNOIS_001.jpg" style="transform: none !important;"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-python-1"><a class="v3-open" href="#v3-python-1"><img src="../media/PYTHON-DUVERNOIS_002.jpg" alt="PYTHON-DUVERNOIS_002.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-python-2"><a class="v3-open" href="#v3-python-2"><img src="../media/PYTHON-DUVERNOIS_006.jpg" alt="PYTHON-DUVERNOIS_006.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-python-3"><a class="v3-open" href="#v3-python-3"><img src="../media/PYTHON-DUVERNOIS_008.jpg" alt="PYTHON-DUVERNOIS_008.jpg" style="transform: none !important;"></a></div></div><div class="v3-hero" id="v3-python-4"><a class="v3-open" href="#v3-python-4"><img src="../media/OTA_NZI_PYTHON_EXT3_HD.jpg" alt="OTA_NZI_PYTHON_EXT3_HD.jpg" style="transform: none !important;"></a></div></div></article>
 <article class="project"><header class="project-header">
 <div class="project-title">
 <div class="project-num-line">
@@ -2054,7 +2122,7 @@ html, body {
 <div class="project-subtitle">Cœur des Sources</div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Hybrid timber + low-carbon concrete</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Cerqual HQE Tertiaire · BDF Argent</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E3C1</div></div>
 </div>
-<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">34 M€</span><span class="sub">3 400 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">10 000 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Ville de Saint-Germain-en-Laye</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">On site</span><span class="sub">Delivery Q1 2027 · Timber/concrete · stone cladding · timber roof structure</span></div></div></div></header><div class="project-description">
+<div class="cart-transfo cart-data"><div class="ct-kicker">Auditorium · music school · sports · park</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">34 M€</span><span class="ct-s">3 400 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">10 000 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Ville de Saint-Germain-en-Laye</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">On site</span><span class="ct-s">Delivery Q1 2027 · Timber/concrete · stone cladding · timber roof structure</span></div></div></div></header><div class="project-description">
 </div><div class="v3-project-grid"><div class="v3-hero" id="v3-coeur-0"><a class="v3-open" href="#v3-coeur-0"><img src="../media/COEUR-DES-SOURCES_012.jpg" alt="COEUR-DES-SOURCES_012.jpg" style="transform: none !important;"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-coeur-1"><a class="v3-open" href="#v3-coeur-1"><img src="../media/COEUR-DES-SOURCES_001.jpg" alt="COEUR-DES-SOURCES_001.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-coeur-2"><a class="v3-open" href="#v3-coeur-2"><img src="../media/COEUR-DES-SOURCES_002.jpg" alt="COEUR-DES-SOURCES_002.png" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-coeur-3"><a class="v3-open" href="#v3-coeur-3"><img src="../media/Salle 2 ok.jpg" alt="Salle 2 ok.png" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-coeur-4"><a class="v3-open" href="#v3-coeur-4"><img src="../media/COEUR-DES-SOURCES_009.jpg" alt="COEUR-DES-SOURCES_009.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-coeur-5"><a class="v3-open" href="#v3-coeur-5"><img src="../media/GML-StGerLayCoeurSources-250722-01.jpg" alt="GML-StGerLayCoeurSources-250722-01.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-coeur-6"><a class="v3-open" href="#v3-coeur-6"><img src="../media/20251127_134452.jpg" alt="20251127_134452.jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-2"><div class="v3-slot v3-slot-43" id="v3-coeur-7"><a class="v3-open" href="#v3-coeur-7"><img src="../media/COEUR-DES-SOURCES_003.jpg" alt="COEUR-DES-SOURCES_003.png" style="transform: none !important; object-position: 50.4% 100%;" class=""></a></div><div class="v3-slot v3-slot-43" id="v3-coeur-8"><a class="v3-open" href="#v3-coeur-8"><img src="../media/Audi 2.jpg" alt="Audi 2.png" class="" style="transform: none !important; object-position: 46.1% 58.5%;"></a></div></div></div></article>
 <article class="project"><header class="project-header">
 <div class="project-title">
@@ -2066,7 +2134,7 @@ html, body {
 <div class="project-subtitle">Gymnase Althéa Laurin</div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Hybrid timber/concrete · hemp wool</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">NF Habitat HQE</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E2C1 · Bio-sourced label level 2</div></div>
 </div>
-<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">9 M€</span><span class="sub">3 000 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">3 000 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Ville d'Épinay-sur-Seine</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">Delivered Q1 2026</span><span class="sub">Timber/concrete frame · cable-stayed CLT beams · hemp wool insulation</span></div></div></div></header><div class="project-description">
+<div class="cart-transfo cart-data"><div class="ct-kicker">Dance studio · multi-sport complex</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">9 M€</span><span class="ct-s">3 000 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">3 000 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Ville d'Épinay-sur-Seine</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">Delivered Q1 2026</span><span class="ct-s">Timber/concrete frame · cable-stayed CLT beams · hemp wool insulation</span></div></div></div></header><div class="project-description">
 </div><div class="v3-project-grid"><div class="v3-hero" id="v3-althea-0"><a class="v3-open" href="#v3-althea-0"><img src="../media/260122_NZI_Epinay_Salem_web (2).jpg" alt="260122_NZI_Epinay_Salem_web (2).jpg" style="transform: none !important;"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-althea-1"><a class="v3-open" href="#v3-althea-1"><img src="../media/Aerienne Epinay avec persos.jpg" alt="Aerienne Epinay avec persos.png" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-2"><a class="v3-open" href="#v3-althea-2"><img src="../media/260122_NZI_Epinay_Salem_web (33).jpg" alt="260122_NZI_Epinay_Salem_web (33).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-3"><a class="v3-open" href="#v3-althea-3"><img src="../media/260122_NZI_Epinay_Salem_web (7).jpg" alt="260122_NZI_Epinay_Salem_web (7).jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-althea-4"><a class="v3-open" href="#v3-althea-4"><img src="../media/260122_NZI_Epinay_Salem_web (1).jpg" alt="260122_NZI_Epinay_Salem_web (1).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-5"><a class="v3-open" href="#v3-althea-5"><img src="../media/260122_NZI_Epinay_Salem_web (31).jpg" alt="260122_NZI_Epinay_Salem_web (31).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-6"><a class="v3-open" href="#v3-althea-6"><img src="../media/260122_NZI_Epinay_Salem_web (30).jpg" alt="260122_NZI_Epinay_Salem_web (30).jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-althea-7"><a class="v3-open" href="#v3-althea-7"><img src="../media/260122_NZI_Epinay_Salem_web (34).jpg" alt="260122_NZI_Epinay_Salem_web (34).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-8"><a class="v3-open" href="#v3-althea-8"><img src="../media/260122_NZI_Epinay_Salem_web (3).jpg" alt="260122_NZI_Epinay_Salem_web (3).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-9"><a class="v3-open" href="#v3-althea-9"><img src="../media/260122_NZI_Epinay_Salem_web (5).jpg" alt="260122_NZI_Epinay_Salem_web (5).jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-althea-10"><a class="v3-open" href="#v3-althea-10"><img src="../media/260122_NZI_Epinay_Salem_web (11).jpg" alt="260122_NZI_Epinay_Salem_web (11).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-11"><a class="v3-open" href="#v3-althea-11"><img src="../media/260122_NZI_Epinay_Salem_web (12).jpg" alt="260122_NZI_Epinay_Salem_web (12).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-12"><a class="v3-open" href="#v3-althea-12"><img src="../media/260122_NZI_Epinay_Salem_web (13).jpg" alt="260122_NZI_Epinay_Salem_web (13).jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-althea-13"><a class="v3-open" href="#v3-althea-13"><img src="../media/260122_NZI_Epinay_Salem_web (17).jpg" alt="260122_NZI_Epinay_Salem_web (17).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-14"><a class="v3-open" href="#v3-althea-14"><img src="../media/260122_NZI_Epinay_Salem_web (20).jpg" alt="260122_NZI_Epinay_Salem_web (20).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-15"><a class="v3-open" href="#v3-althea-15"><img src="../media/260122_NZI_Epinay_Salem_web (25).jpg" alt="260122_NZI_Epinay_Salem_web (25).jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-althea-16"><a class="v3-open" href="#v3-althea-16"><img src="../media/260122_NZI_Epinay_Salem_web (32).jpg" alt="260122_NZI_Epinay_Salem_web (32).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-17"><a class="v3-open" href="#v3-althea-17"><img src="../media/260122_NZI_Epinay_Salem_web (9).jpg" alt="260122_NZI_Epinay_Salem_web (9).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-18"><a class="v3-open" href="#v3-althea-18"><img src="../media/260122_NZI_Epinay_Salem_web (29).jpg" alt="260122_NZI_Epinay_Salem_web (29).jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-althea-19"><a class="v3-open" href="#v3-althea-19"><img src="../media/260122_NZI_Epinay_Salem_web (4).jpg" alt="260122_NZI_Epinay_Salem_web (4).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-20"><a class="v3-open" href="#v3-althea-20"><img src="../media/260122_NZI_Epinay_Salem_web (26).jpg" alt="260122_NZI_Epinay_Salem_web (26).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-21"><a class="v3-open" href="#v3-althea-21"><img src="../media/260122_NZI_Epinay_Salem_web (15).jpg" alt="260122_NZI_Epinay_Salem_web (15).jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-althea-22"><a class="v3-open" href="#v3-althea-22"><img src="../media/260122_NZI_Epinay_Salem_web (8).jpg" alt="260122_NZI_Epinay_Salem_web (8).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-23"><a class="v3-open" href="#v3-althea-23"><img src="../media/260122_NZI_Epinay_Salem_web (36).jpg" alt="260122_NZI_Epinay_Salem_web (36).jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-althea-24"><a class="v3-open" href="#v3-althea-24"><img src="../media/260122_NZI_Epinay_Salem_web (6).jpg" alt="260122_NZI_Epinay_Salem_web (6).jpg" style="transform: none !important;"></a></div></div></div></article>
 <article class="project"><header class="project-header">
 <div class="project-title">
@@ -2078,7 +2146,7 @@ html, body {
 <div class="project-subtitle">Musée du Numérique</div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Excelsior cinema conversion</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Cerqual HQE Tertiaire</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E3C1 · on-site concrete</div></div>
 </div>
-<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">9,35 M€</span><span class="sub">4 675 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">2 000 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Ville de Savigny-sur-Orge</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">On site</span><span class="sub">Delivery Q2 2027 · On-site concrete · acoustic envelope</span></div></div></div></header><div class="project-description">
+<div class="cart-transfo cart-data"><div class="ct-kicker">Cultural hub · cinemas · Museum of Digital</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">9,35 M€</span><span class="ct-s">4 675 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">2 000 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Ville de Savigny-sur-Orge</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">On site</span><span class="ct-s">Delivery Q2 2027 · On-site concrete · acoustic envelope</span></div></div></div></header><div class="project-description">
 </div><div class="v3-project-grid"><div class="v3-hero" id="v3-numerique-0"><a class="v3-open" href="#v3-numerique-0"><img src="../media/OTA_nzi_savigny_ext_BD.jpg" alt="OTA_nzi_savigny_ext_BD.jpg" style="transform: none !important;"></a></div><div class="v3-hero" id="v3-numerique-1"><a class="v3-open" href="#v3-numerique-1"><img src="../media/OTA_nzi_savigny_int_BD.jpg" alt="OTA_nzi_savigny_int_BD.jpg" style="transform: none !important;"></a></div></div></article>
 <article class="project"><header class="project-header">
 <div class="project-title">
@@ -2088,10 +2156,10 @@ html, body {
 </div>
 <h3 id="proj-nuages">Media library · cultural community hub — at the foot of Émile Aillaud’s Tours Nuages — Nanterre</h3>
 <div class="project-subtitle">Médiathèque et tiers lieu sous les Tours Nuages</div>
-<div class="project-filiere"><span class="pf-label">Method</span><span class="pf-value">Bois + chanvre</span></div>
+<div class="project-filiere"><span class="pf-label">Method</span><span class="pf-value">Timber + hemp</span></div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Timber construction + hemp concrete</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Cerqual HQE Tertiaire</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">E4C2</div></div>
 </div>
-<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">4,4 M€</span><span class="sub">3 140 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">1 400 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Ville de Nanterre</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">In design</span><span class="sub">Delivery Q1 2028 · Timber construction · hemp insulation</span></div></div></div></header><div class="project-description">
+<div class="cart-transfo cart-data"><div class="ct-kicker">Media library · cultural hub</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">4,4 M€</span><span class="ct-s">3 140 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">1 400 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Ville de Nanterre</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">In design</span><span class="ct-s">Delivery Q1 2028 · Timber construction · hemp insulation</span></div></div></div></header><div class="project-description">
 </div><div class="v3-project-grid"><div class="v3-hero" id="v3-nuages-0"><a class="v3-open" href="#v3-nuages-0"><img src="../media/NANTERRE-MEDIATHEQUE_001.jpg" alt="NANTERRE-MEDIATHEQUE_001.png" style="transform: none !important;"></a></div><div class="v3-hero" id="v3-nuages-1"><a class="v3-open" href="#v3-nuages-1"><img src="../media/NANTERRE-MEDIATHEQUE_002.jpg" alt="NANTERRE-MEDIATHEQUE_002.jpg" style="transform: none !important;"></a></div></div></article>
 
 <section class="chapter-opener" id="ch-reversibilite" data-num="III">
@@ -2115,7 +2183,7 @@ html, body {
 <div class="project-subtitle">Village des Athlètes — ÎLOT PB10</div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Timber construction</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">NF Habitat HQE Excellent</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">RE2020 threshold 2025 · Bio-sourced label level 2</div></div>
 </div>
-<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">5,5 M€</span><span class="sub">2 200 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">2 500 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Pichet-Legendre</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">Delivered 2024</span><span class="sub">Timber · NF HQE · Biodiversity corridor</span></div></div></div></header>
+<div class="cart-transfo cart-data"><div class="ct-kicker">Olympic Village → 37 homes</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">5,5 M€</span><span class="ct-s">2 200 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">2 500 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Pichet-Legendre</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">Delivered 2024</span><span class="ct-s">Timber · NF HQE · Biodiversity corridor</span></div></div></div></header>
 <div class="project-description">
 </div>
 <div class="v3-project-grid"><div class="v3-hero" id="v3-village-0"><a class="v3-open" href="#v3-village-0"><img src="../media/JO2024-PB10_002.jpg" alt="JO2024-PB10_002.jpg" style="transform: scale(1.09) translateY(-29.6005px);"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-village-1"><a class="v3-open" href="#v3-village-1"><img src="../media/JO2024-PB10_005.jpg" alt="JO2024-PB10_005.png" style="transform: scale(1.09) translateY(-22.4805px);"></a></div><div class="v3-slot v3-slot-43" id="v3-village-2"><a class="v3-open" href="#v3-village-2"><img src="../media/JO2024-PB10_001.jpg" alt="JO2024-PB10_001.jpg" style="transform: scale(1.09) translateY(-22.4805px);"></a></div><div class="v3-slot v3-slot-43" id="v3-village-3"><a class="v3-open" href="#v3-village-3"><img src="../media/IMG_6196 2.JPG" alt="IMG_6196 2.JPG" style="transform: scale(1.09) translateY(-22.4805px);"></a></div></div><div class="v3-row v3-row-2"><div class="v3-slot v3-slot-43" id="v3-village-4"><a class="v3-open" href="#v3-village-4"><img src="../media/Screenshot_20250907_180424_LinkedIn.jpg" alt="Screenshot_20250907_180424_LinkedIn.jpg" style="transform: scale(1.09) translateY(-25.7716px);"></a></div><div class="v3-slot v3-slot-43" id="v3-village-5"><a class="v3-open" href="#v3-village-5"><img src="../media/Screenshot_20250417_154204_Instagram.jpg" alt="Screenshot_20250417_154204_Instagram.jpg" style="transform: scale(1.09) translateY(-25.7716px);"></a></div></div></div></article>
@@ -2129,7 +2197,7 @@ html, body {
 <div class="project-subtitle">CCBN Brie Nangissienne</div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Timber · hemp insulation · prefabricated frame</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">Construction Bois</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">RE2020 threshold 2028 · Bio-sourced label level 3</div></div>
 </div>
-<div class="cart-v3"><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">4,87 M€</span><span class="sub">2 450 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">1 991 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Communauté de communes Brie Nangissienne</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Phase</span><span class="big">In design</span><span class="sub">Delivery Q2 2028 · Timber structure · hemp insulation · prefabricated frame</span></div></div></div></header><div class="project-description">
+<div class="cart-transfo cart-data"><div class="ct-kicker">Community headquarters · bio-based office</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">4,87 M€</span><span class="ct-s">2 450 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">1 991 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Communauté de communes Brie Nangissienne</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Phase</span><span class="ct-v">In design</span><span class="ct-s">Delivery Q2 2028 · Timber structure · hemp insulation · prefabricated frame</span></div></div></div></header><div class="project-description">
 </div><div class="v3-project-grid"><div class="v3-hero" id="v3-ccbn-0"><a class="v3-open" href="#v3-ccbn-0"><img src="../media/OTA_nzi_nanges_1006_1.jpg" alt="OTA_nzi_nanges_1006_1.jpg" style="transform: scale(1.09) translateY(-30.5078px);"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-ccbn-1"><a class="v3-open" href="#v3-ccbn-1"><img src="../media/OTA_nzi_nangis_vue2 (2).jpg" alt="OTA_nzi_nangis_vue2 (2).jpg" style="transform: scale(1.09) translateY(-22.88px);"></a></div><div class="v3-slot v3-slot-43" id="v3-ccbn-2"><a class="v3-open" href="#v3-ccbn-2"><img src="../media/OTA_nangis__view terrace HD.jpg" alt="OTA_nangis__view terrace HD.jpg" style="transform: scale(1.09) translateY(-22.88px);"></a></div><div class="v3-slot v3-slot-43" id="v3-ccbn-3"><a class="v3-open" href="#v3-ccbn-3"><img src="../media/OTA_nangis_view stairs HD.jpg" alt="OTA_nangis_view stairs HD.jpg" style="transform: scale(1.09) translateY(-22.88px);"></a></div></div></div></article>
 
 <section class="chapter-opener" id="ch-logements" data-num="IV">
@@ -2154,7 +2222,7 @@ html, body {
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Timber construction</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">NF Habitat HQE Excellent · Plan Climat</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">Label Effinergie</div></div>
 <div class="v3-distinctions-block"><div class="v3-distinctions-key">Awards &amp; recognition</div><div class="v3-distinctions-list"><div class="v3-dist-item"><span class="v3-dist-status">Selected</span>ArchDaily Building of the Year 2024</div><div class="v3-dist-item"><span class="v3-dist-status">Publication</span>Metalocus 2023</div></div></div>
 </div>
-<div class="cart-v3"><div class="v3-preamble"><div class="v3-bloc-reco"><div class="v3-bloc-title">Award · 1 distinction</div><ul><li><strong>ArchDaily Building of the Year</strong> <span class="year">2024</span><span class="status">— Sélection internationale</span></li></ul><div class="more"><a href="#reconnaissances">See index →</a></div></div></div><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">2,6 M€</span><span class="sub">2 330 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">1 115 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">Elogie-SIEMP</span><span class="sub">Competition winner</span></div><div class="v3-cell phase"><span class="micro">Method</span><span class="big">New build</span><span class="sub">NF Habitat HQE Excellent · Effinergie · Plan Climat Paris</span></div></div></div></header><div class="project-description">
+<div class="cart-transfo cart-data"><div class="ct-kicker">14 social homes + nursery</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">2,6 M€</span><span class="ct-s">2 330 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">1 115 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">Elogie-SIEMP</span><span class="ct-s">Competition winner</span></div><div class="ct-item"><span class="ct-k">Method</span><span class="ct-v">New build</span><span class="ct-s">NF Habitat HQE Excellent · Effinergie · Plan Climat Paris</span></div></div><div class="ct-reco"><div class="ct-reco-head">Award · 1 distinction</div><div class="ct-reco-k"><span class="ct-star">★</span>2024</div><div class="ct-reco-v">ArchDaily Building of the Year — international selection</div></div><div class="ct-more"><a href="#reconnaissances">See the full index ↓</a></div></div></header><div class="project-description">
 <p>A corner plot to negotiate — the crossing of two streets that express two identities. The insertion is quiet: mineral references, shared colouring, dialogue with topography and building heights.</p>
 </div><div class="project-prize"><span class="label">Awards</span><div class="value">Nominated for Building of the Year — ArchDaily 2024 · Metalocus (2023)</div></div><div class="v3-project-grid"><div class="v3-hero" id="v3-buzenval-0"><a class="v3-open" href="#v3-buzenval-0"><img src="../media/cSimonGuesdon_DSC_6302.jpg" alt="cSimonGuesdon_DSC_6302.jpg" style="transform: scale(1.09) translateY(-30.7074px);"></a></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-buzenval-1"><a class="v3-open" href="#v3-buzenval-1"><img src="../media/cSimonGuesdon_DSC2360.jpg" alt="cSimonGuesdon_DSC2360.jpg" style="transform: scale(1.09) translateY(-22.9624px);"></a></div><div class="v3-slot v3-slot-43" id="v3-buzenval-2"><a class="v3-open" href="#v3-buzenval-2"><img src="../media/cSimonGuesdon_DSC2394.jpg" alt="cSimonGuesdon_DSC2394.jpg" style="transform: scale(1.09) translateY(-22.9624px);"></a></div><div class="v3-slot v3-slot-43" id="v3-buzenval-3"><a class="v3-open" href="#v3-buzenval-3"><img src="../media/cSimonGuesdon_DSC2495.jpg" alt="cSimonGuesdon_DSC2495.jpg" style="transform: scale(1.09) translateY(-22.9624px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-buzenval-4"><a class="v3-open" href="#v3-buzenval-4"><img src="../media/cSimonGuesdon_DSC2551.jpg" alt="cSimonGuesdon_DSC2551.jpg" style="transform: scale(1.09) translateY(-22.0932px);"></a></div><div class="v3-slot v3-slot-43" id="v3-buzenval-5"><a class="v3-open" href="#v3-buzenval-5"><img src="../media/cSimonGuesdon_DSC2476.jpg" alt="cSimonGuesdon_DSC2476.jpg" style="transform: scale(1.09) translateY(-22.0932px);"></a></div><div class="v3-slot v3-slot-43" id="v3-buzenval-6"><a class="v3-open" href="#v3-buzenval-6"><img src="../media/cSimonGuesdon_DSC_5978.jpg" alt="cSimonGuesdon_DSC_5978.jpg" style="transform: scale(1.09) translateY(-22.0932px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-buzenval-7"><a class="v3-open" href="#v3-buzenval-7"><img src="../media/cSimonGuesdon_DSC_6189.jpg" alt="cSimonGuesdon_DSC_6189.jpg" style="transform: scale(1.09) translateY(-9.53896px);"></a></div><div class="v3-slot v3-slot-43" id="v3-buzenval-8"><a class="v3-open" href="#v3-buzenval-8"><img src="../media/cSimonGuesdon_DSC_6078.jpg" alt="cSimonGuesdon_DSC_6078.jpg" style="transform: scale(1.09) translateY(-9.53896px);"></a></div><div class="v3-slot v3-slot-43" id="v3-buzenval-9"><a class="v3-open" href="#v3-buzenval-9"><img src="../media/cSimonGuesdon_DSC_6228.jpg" alt="cSimonGuesdon_DSC_6228.jpg" style="transform: scale(1.09) translateY(-9.53896px);"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-buzenval-10"><a class="v3-open" href="#v3-buzenval-10"><img src="../media/cSimonGuesdon_DSC_6094.jpg" alt="cSimonGuesdon_DSC_6094.jpg" style="transform: scale(1.09) translateY(3.01526px);"></a></div><div class="v3-slot v3-slot-43" id="v3-buzenval-11"><a class="v3-open" href="#v3-buzenval-11"><img src="../media/cSimonGuesdon_DSC_6311.jpg" alt="cSimonGuesdon_DSC_6311.jpg" style="transform: scale(1.09) translateY(3.01526px);"></a></div><div class="v3-slot v3-slot-43" id="v3-buzenval-12"><a class="v3-open" href="#v3-buzenval-12"><img src="../media/cSimonGuesdon_DSC_6230.jpg" alt="cSimonGuesdon_DSC_6230.jpg" style="transform: scale(1.09) translateY(3.01526px);"></a></div></div></div></article>
 <article class="project"><header class="project-header">
@@ -2167,54 +2235,53 @@ html, body {
 <div class="project-subtitle">Montreuil — 26 logements participatifs</div>
 <div class="project-prizes">Lauréat ADC Awards 2018<span class="pp-sep">·</span>Nominated Équerre d'Argent 1st work<span class="pp-sep">·</span><span class="pp-more"><a href="#reconnaissances">voir</a></span></div>
 <div class="v3-perfo-block"><div class="v3-perfo-key">Structure &amp; insulation</div><div class="v3-perfo-value">Collaborative housing</div><div class="v3-perfo-key">HQE</div><div class="v3-perfo-value">RT2012 -10%</div><div class="v3-perfo-key">Label</div><div class="v3-perfo-value">RE2020</div></div>
-<div class="v3-distinctions-block"><div class="v3-distinctions-key">Awards &amp; recognition</div><div class="v3-distinctions-list"><div class="v3-dist-item"><span class="v3-dist-status">Winner</span>ADC Awards 2018</div><div class="v3-dist-item"><span class="v3-dist-status">Selected</span>Europe 40 Under 40 (agence)</div><div class="v3-dist-item"><span class="v3-dist-status">Winner</span>Prix Femme Architecte 2018 (Sandra de Giorgio)</div><div class="v3-dist-item"><span class="v3-dist-status">Nominated</span>Équerre d'Argent 1ère Œuvre 2019</div></div></div>
+<div class="v3-distinctions-block"><div class="v3-distinctions-key">Awards &amp; recognition</div><div class="v3-distinctions-list"><div class="v3-dist-item"><span class="v3-dist-status">Exhibition</span>Pavillon de l'Arsenal — « Parties communes » 2025-2026</div><div class="v3-dist-item"><span class="v3-dist-status">Winner</span>ADC Awards 2018</div><div class="v3-dist-item"><span class="v3-dist-status">Selected</span>Europe 40 Under 40 (agence)</div><div class="v3-dist-item"><span class="v3-dist-status">Winner</span>Prix Femme Architecte 2018 (Sandra de Giorgio)</div><div class="v3-dist-item"><span class="v3-dist-status">Nominated</span>Équerre d'Argent 1ère Œuvre 2019</div></div></div>
 </div>
-<div class="cart-v3"><div class="v3-preamble"><div class="v3-bloc-reco"><div class="v3-bloc-title">Awards · 2 distinctions</div><ul><li><strong>ADC Awards</strong> <span class="year">2018</span><span class="status">— Lauréat</span></li><li><strong>Équerre d'Argent Première Œuvre</strong> <span class="year">2017</span><span class="status">— Nominé</span></li></ul><div class="more"><a href="#reconnaissances">See index →</a></div></div></div><div class="v3-bandeau"><div class="v3-cell budget"><span class="micro">Budget</span><span class="big">3,06 M€</span><span class="sub">1 670 €/m²</span></div><div class="v3-cell surface"><span class="micro">Floor area</span><span class="big">1 832 m²</span><span class="sub">SDP</span></div><div class="v3-cell moa"><span class="micro">Client</span><span class="big">CPA-CPS (coopérative d'habitants)</span><span class="sub">Direct commission</span></div><div class="v3-cell phase"><span class="micro">Method</span><span class="big">New build</span><span class="sub">Habitat participatif · RT2012-10%</span></div></div></div></header><div class="project-description">
+<div class="cart-transfo cart-data"><div class="ct-kicker">Collaborative housing · 26 units</div><div class="ct-grid"><div class="ct-item"><span class="ct-k">Budget</span><span class="ct-v">3,06 M€</span><span class="ct-s">1 670 €/m²</span></div><div class="ct-item"><span class="ct-k">Floor area</span><span class="ct-v">1 832 m²</span><span class="ct-s">SDP</span></div><div class="ct-item"><span class="ct-k">Client</span><span class="ct-v">CPA-CPS (coopérative d'habitants)</span><span class="ct-s">Direct commission</span></div><div class="ct-item"><span class="ct-k">Method</span><span class="ct-v">New build</span><span class="ct-s">Habitat participatif · RT2012-10%</span></div></div><div class="ct-reco"><div class="ct-reco-head">Awards · 2 distinctions</div><div class="ct-reco-k"><span class="ct-star">★</span>2018</div><div class="ct-reco-v">ADC Awards — winner</div><div class="ct-reco-k">2017</div><div class="ct-reco-v">Équerre d'Argent Première Œuvre — nominee</div></div><div class="ct-more"><a href="#reconnaissances">See the full index ↓</a></div></div></header><div class="project-description">
 <p>One of the founding projects of NZI's participatory practice. Designed with future residents — an open back-and-forth between the design team, client, engineers and users. The delivered building is everyday life; the awards came after.</p>
 </div><div class="project-prize"><span class="label">Awards</span><div class="value">Archi Design Awards 2018 — Lauréat (Logements petit collectif) · Archi Design Club Awards — Lauréat · Sélection Europe 40 Under 40 · Prix Femme Architecte · Nominé Première Œuvre — Équerre d'Argent 2019 · ADC Awards 2018</div></div><div class="v3-project-grid"><div class="v3-hero" id="v3-montreuil-0"><a class="v3-open" href="#v3-montreuil-0"><img src="../media/MONTREUIL-PARTICIPATIF_001.jpg" alt="Montreuil — vue principale" style="transform: none !important;"></a></div><div class="v3-video-block"><video autoplay="" loop="" muted="" playsinline="" controls="" preload="metadata"><source src="../media/montreuil-film.mp4#t=10" type="video/mp4"></video></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-montreuil-1"><a class="v3-open" href="#v3-montreuil-1"><img src="../media/MONTREUIL-PARTICIPATIF_004.jpg" alt="MONTREUIL-PARTICIPATIF_004.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-montreuil-2"><a class="v3-open" href="#v3-montreuil-2"><img src="../media/MONTREUIL-PARTICIPATIF_008.jpg" alt="MONTREUIL-PARTICIPATIF_008.png" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-montreuil-3"><a class="v3-open" href="#v3-montreuil-3"><img src="../media/MONTREUIL-PARTICIPATIF_009.jpg" alt="MONTREUIL-PARTICIPATIF_009.jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-montreuil-4"><a class="v3-open" href="#v3-montreuil-4"><img src="../media/MONTREUIL-PARTICIPATIF_005.jpg" alt="MONTREUIL-PARTICIPATIF_005.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-montreuil-5"><a class="v3-open" href="#v3-montreuil-5"><img src="../media/MONTREUIL-PARTICIPATIF_006.jpg" alt="MONTREUIL-PARTICIPATIF_006.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-montreuil-6"><a class="v3-open" href="#v3-montreuil-6"><img src="../media/MONTREUIL-PARTICIPATIF_007.jpg" alt="MONTREUIL-PARTICIPATIF_007.jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-montreuil-7"><a class="v3-open" href="#v3-montreuil-7"><img src="../media/A39.jpg" alt="A39.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-montreuil-8"><a class="v3-open" href="#v3-montreuil-8"><img src="../media/A19 clair.jpg" alt="A19 clair.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-montreuil-9"><a class="v3-open" href="#v3-montreuil-9"><img src="../media/G.jpg" alt="G.jpg" style="transform: none !important;"></a></div></div><div class="v3-row v3-row-3"><div class="v3-slot v3-slot-43" id="v3-montreuil-10"><a class="v3-open" href="#v3-montreuil-10"><img src="../media/IMG_0736.jpg" alt="IMG_0736.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-montreuil-11"><a class="v3-open" href="#v3-montreuil-11"><img src="../media/02 clair.jpg" alt="02 clair.jpg" style="transform: none !important;"></a></div><div class="v3-slot v3-slot-43" id="v3-montreuil-12"><a class="v3-open" href="#v3-montreuil-12"><img src="../media/15 clair.jpg" alt="15 clair.jpg" style="transform: none !important;"></a></div></div></div></article>
 
 <!-- ============ RECONNAISSANCES ============ -->
 <!-- ============ RECONNAISSANCES (v2) ============ -->
 <section class="reconnaissances" id="reconnaissances">
-  <header class="reco-head">
-    <h2 class="reco-title">Awards &amp; recognition</h2>
-    <span class="reco-meta">Awards, lectures &amp; exhibitions · 2016 — 2026</span>
-  </header>
-
-  <div class="reco-section">
-    <p class="reco-section-title">Awards</p>
-    <div class="reco-subsection">
-      <p class="reco-subsection-title">International scene</p>
-      <ul class="reco-list">
-        <li class="reco-row"><span class="reco-year">2024</span><div class="reco-main"><span class="reco-prize">ArchDaily Building of the Year</span><span class="reco-project">Buzenval · Paris 20ᵉ</span></div><span class="reco-status">Selected</span></li>
-        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Architizer A+ Awards</span><span class="reco-project">Bertelotte · Architecture &amp; Affordable Design</span></div><span class="reco-status is-laureat">Winner</span></li>
-        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Architizer A+ Awards</span><span class="reco-project">Bertelotte</span></div><span class="reco-status">Finalist ×2</span></li>
-        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Prix UIA 2030</span><span class="reco-project">Bertelotte · UIA / ONU-Habitat</span></div><span class="reco-status">Honourable mention</span></li>
-        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Dezeen Awards</span><span class="reco-project">Bertelotte</span></div><span class="reco-status">Longlist</span></li>
-        <li class="reco-row"><span class="reco-year">2020</span><div class="reco-main"><span class="reco-prize">ArchDaily Building of the Year</span><span class="reco-project">13 maisons bois+paille · Nogent-le-Rotrou</span></div><span class="reco-status">Selected</span></li>
-        <li class="reco-row"><span class="reco-year">2018</span><div class="reco-main"><span class="reco-prize">Europe 40 Under 40</span><span class="reco-project">NZI · Chicago Athenaeum / European Centre</span></div><span class="reco-status is-laureat">Winner</span></li>
-      </ul>
+  <div class="reco-spotlight">
+    <div class="reco-spot-kicker">Recognition — 2003 / 2027</div>
+    <div class="reco-spot-hero">
+      <p class="reco-spot-count">26</p>
+      <div>
+        <h2 class="reco-spot-headline">Awards &amp;<br>exhibitions.</h2>
+        <p class="reco-spot-sub">Twenty-six distinctions across two decades of building less.</p>
+      </div>
     </div>
-    <div class="reco-subsection">
-      <p class="reco-subsection-title">France</p>
-      <ul class="reco-list">
-        <li class="reco-row"><span class="reco-year">2026</span><div class="reco-main"><span class="reco-prize">Creativ'Impact</span><span class="reco-project">NZI</span></div><span class="reco-status">Finalist</span></li>
-        <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">APEX — Architectures Parisiennes Exemplaires</span><span class="reco-project">Python-Duvernois · Ville de Paris</span></div><span class="reco-status is-laureat">Winner</span></li>
-        <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">AMI Bâti Sobre</span><span class="reco-project">Python-Duvernois · ADEME</span></div><span class="reco-status is-laureat">Winner</span></li>
-        <li class="reco-row"><span class="reco-year">2024</span><div class="reco-main"><span class="reco-prize">Trophée BBCA Quartier Bas Carbone</span><span class="reco-project">ZAC Python-Duvernois · Certivea / SEMAPA</span></div><span class="reco-status is-laureat">Winner</span></li>
-        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Trophées de la Construction</span><span class="reco-project">Bertelotte · Batiactu</span></div><span class="reco-status is-laureat">Winner</span></li>
-        <li class="reco-row"><span class="reco-year">2022</span><div class="reco-main"><span class="reco-prize">Grand Prix SIMI</span><span class="reco-project">Bertelotte · Habitat &amp; Logements Transformation</span></div><span class="reco-status">Finalist</span></li>
-        <li class="reco-row"><span class="reco-year">2021</span><div class="reco-main"><span class="reco-prize">Prix Construction Bois Île-de-France</span><span class="reco-project">Bertelotte · Fibois IDF</span></div><span class="reco-status is-laureat">Winner</span></li>
-        <li class="reco-row"><span class="reco-year">2020</span><div class="reco-main"><span class="reco-prize">Palmarès des Bâtiments biosourcés</span><span class="reco-project">13 maisons bois+paille · Nogent-le-Rotrou · FFB</span></div><span class="reco-status is-laureat">Jury Prize</span></li>
-        <li class="reco-row"><span class="reco-year">2020</span><div class="reco-main"><span class="reco-prize">ADC Awards</span><span class="reco-project">Nogent-le-Rotrou</span></div><span class="reco-status">Nominated</span></li>
-        <li class="reco-row"><span class="reco-year">2020</span><div class="reco-main"><span class="reco-prize">ADC Awards</span><span class="reco-project">Périscolaire Bonneuil-en-France</span></div><span class="reco-status">Nominated</span></li>
-        <li class="reco-row"><span class="reco-year">2019</span><div class="reco-main"><span class="reco-prize">Trophées Bois Île-de-France</span><span class="reco-project">Périscolaire Bonneuil-en-France · Fibois IDF</span></div><span class="reco-status is-laureat">Winner</span></li>
-        <li class="reco-row"><span class="reco-year">2018</span><div class="reco-main"><span class="reco-prize">ADC Awards</span><span class="reco-project">26 logements participatifs · Montreuil</span></div><span class="reco-status is-laureat">Winner</span></li>
-        <li class="reco-row"><span class="reco-year">2018</span><div class="reco-main"><span class="reco-prize">Jeune Femme Architecte</span><span class="reco-project">Sandra de Giorgio · ARVHA</span></div><span class="reco-status is-laureat">Winner</span></li>
-        <li class="reco-row"><span class="reco-year">2017</span><div class="reco-main"><span class="reco-prize">Équerre d'Argent — Première Œuvre</span><span class="reco-project">26 logements participatifs · Montreuil · Le Moniteur / AMC</span></div><span class="reco-status">Nominated</span></li>
-      </ul>
-      <p class="reco-note"><strong>Historical note</strong> — The awards from 2017–2020 (Nogent-le-Rotrou, Bonneuil-en-France, Équerre d'Argent Montreuil) relate to projects prior to the 2025–2026 scope of this notebook. They appear here to attest that the NZI method — active transformation, bio-sourced materials, timber and straw — has held for eight years, not only since 2025.</p>
-    </div>
+    <p class="reco-spot-note"><strong>Construction Bois series — Fibois Île-de-France</strong> · three-time regional timber-construction winner: Bonneuil-en-France (2019), Bertelotte / Avia (2021), Nollet (2026, gala 25 June 2026).</p>
+    <ul class="reco-spot-list">
+        <li class="reco-spot-row"><span class="reco-spot-year">2027</span><div><span class="reco-spot-name">best architects 27 — Gold label</span><span class="reco-spot-proj">Nollet · best architects, Düsseldorf</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2026</span><div><span class="reco-spot-name">Prix Régional de la Construction Bois — Fibois IDF</span><span class="reco-spot-proj">Nollet · car park → social housing</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2026</span><div><span class="reco-spot-name">2nd European Collective Housing Award</span><span class="reco-spot-proj">Nollet · Best Renovation · Basque Government</span></div><span class="reco-spot-status">Finalist</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2026</span><div><span class="reco-spot-name">Creativ'Impact</span><span class="reco-spot-proj">NZI Architectes</span></div><span class="reco-spot-status">Finalist</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2025</span><div><span class="reco-spot-name">APEX — Architectures Parisiennes Exemplaires</span><span class="reco-spot-proj">Python-Duvernois · Ville de Paris</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2025</span><div><span class="reco-spot-name">AMI Bâti Sobre</span><span class="reco-spot-proj">Cité des Sports Python-Duvernois · ADEME</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2024</span><div><span class="reco-spot-name">ArchDaily Building of the Year</span><span class="reco-spot-proj">Buzenval · Paris 20ᵉ</span></div><span class="reco-spot-status">Selected</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2024</span><div><span class="reco-spot-name">Trophée BBCA Quartier Bas Carbone</span><span class="reco-spot-proj">ZAC Python-Duvernois · Certivéa / SEMAPA</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2022</span><div><span class="reco-spot-name">Architizer A+ Awards</span><span class="reco-spot-proj">Bertelotte · Affordable Design (Winner + 2 finalists)</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2022</span><div><span class="reco-spot-name">Prix UIA 2030</span><span class="reco-spot-proj">Bertelotte · UIA / UN-Habitat</span></div><span class="reco-spot-status">Honourable mention</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2022</span><div><span class="reco-spot-name">Dezeen Awards</span><span class="reco-spot-proj">Bertelotte</span></div><span class="reco-spot-status">Longlist</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2022</span><div><span class="reco-spot-name">Trophées de la Construction</span><span class="reco-spot-proj">Bertelotte · Batiactu</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2022</span><div><span class="reco-spot-name">Grand Prix SIMI</span><span class="reco-spot-proj">Bertelotte</span></div><span class="reco-spot-status">Finalist</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2021</span><div><span class="reco-spot-name">Prix Régional de la Construction Bois — Fibois IDF</span><span class="reco-spot-proj">Bertelotte / Avia · 139 chambres bois+paille</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2020</span><div><span class="reco-spot-name">Palmarès des Bâtiments biosourcés</span><span class="reco-spot-proj">13 maisons bois+paille · Nogent-le-Rotrou · FFB</span></div><span class="reco-spot-status is-win">Jury Prize</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2020</span><div><span class="reco-spot-name">Prix National Construction Bois (PNCB)</span><span class="reco-spot-proj">Nogent-le-Rotrou · Fibois France</span></div><span class="reco-spot-status">Finalist</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2020</span><div><span class="reco-spot-name">ArchDaily Building of the Year</span><span class="reco-spot-proj">13 timber+straw houses · Nogent-le-Rotrou</span></div><span class="reco-spot-status">Selected</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2020</span><div><span class="reco-spot-name">ADC Awards</span><span class="reco-spot-proj">Nogent-le-Rotrou</span></div><span class="reco-spot-status">Nominated</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2020</span><div><span class="reco-spot-name">ADC Awards</span><span class="reco-spot-proj">Périscolaire bois · Bonneuil-en-France</span></div><span class="reco-spot-status">Nominated</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2019</span><div><span class="reco-spot-name">Prix Régional de la Construction Bois — Fibois IDF</span><span class="reco-spot-proj">Périscolaire bois · Bonneuil-en-France</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2018</span><div><span class="reco-spot-name">Europe 40 Under 40</span><span class="reco-spot-proj">Sandra de Giorgio & Gianluca Gaudenzi</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2018</span><div><span class="reco-spot-name">ADC Awards</span><span class="reco-spot-proj">26 co-housing units · Montreuil</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2018</span><div><span class="reco-spot-name">Jeune Femme Architecte</span><span class="reco-spot-proj">Sandra de Giorgio · ARVHA</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2017</span><div><span class="reco-spot-name">Équerre d'Argent — Première Œuvre</span><span class="reco-spot-proj">26 co-housing units · Montreuil · Le Moniteur / AMC</span></div><span class="reco-spot-status">Nominated</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2003</span><div><span class="reco-spot-name">Prix Première Œuvre — Sienna</span><span class="reco-spot-proj">Gianluca Gaudenzi · early career · Italy</span></div><span class="reco-spot-status is-win">Winner</span></li>
+        <li class="reco-spot-row"><span class="reco-spot-year">2003</span><div><span class="reco-spot-name">Mention — Bologna</span><span class="reco-spot-proj">Gianluca Gaudenzi · early career · Italy</span></div><span class="reco-spot-status">Honourable mention</span></li>
+    </ul>
   </div>
 
   <div class="reco-section">
@@ -2266,6 +2333,7 @@ html, body {
     <div class="reco-subsection">
       <p class="reco-subsection-title">France</p>
       <ul class="reco-list">
+        <li class="reco-row"><span class="reco-year">2025-2026</span><div class="reco-main"><span class="reco-prize">Pavillon de l'Arsenal · Paris</span><span class="reco-project">Parties communes — 26 participatory housing units · Montreuil</span></div><span class="reco-status">Exhibition</span></li>
         <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">Forum Bois Construction · Paris</span><span class="reco-project">Intervention Nollet · Construction bas carbone</span></div><span class="reco-status">Talk</span></li>
         <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">Observatoire Construction Bois</span></div><span class="reco-status">Symposium</span></li>
         <li class="reco-row"><span class="reco-year">2025</span><div class="reco-main"><span class="reco-prize">Lille Métropole — ADULM</span><span class="reco-project">Avenir des parkings et leur transformation</span></div><span class="reco-status">Talk</span></li>
@@ -2295,7 +2363,7 @@ html, body {
 <div class="contact-cell">
 <div class="label">Practice</div>
 <div class="contact-name">NZI Architectes Urbanistes</div>
-<div class="contact-line">26 rue Miguel Hidalgo</div>
+<div class="contact-line">24 rue Miguel Hidalgo</div>
 <div class="contact-line">75019 Paris</div>
 </div>
 <div class="contact-cell">
@@ -2329,28 +2397,30 @@ html, body {
     var eyebrow = document.createElement('div');
     eyebrow.className = 'cover-eyebrow';
     eyebrow.innerHTML =
-      '<span class="cover-eyebrow-brand">NZI Architectes Urbanistes</span>' +
-      '<span class="cover-eyebrow-year">Field Notebook &middot; 2025&ndash;2026</span>';
+      '<span class="cover-eyebrow-id"><img class="cover-eyebrow-logo" src="../media/nzi-logo-white.png" alt="NZI"><span class="cover-eyebrow-sub">Architectes Urbanistes</span></span>' +
+      '<span class="cover-eyebrow-year">Paris &middot; 2012</span>';
     cover.insertBefore(eyebrow, cover.firstChild);
   }
   /* Lettre par lettre sur le h1 */
   var h1 = document.querySelector('.v5-cover-h1');
   if (h1) {
-    var raw = h1.textContent || h1.innerText;
+    var raw = (h1.textContent || h1.innerText).trim();
+    var words = raw.split(/\s+/);
     h1.innerHTML = '';
     var ci = 0;
-    for (var i = 0; i < raw.length; i++) {
-      var ch = raw[i];
-      var span = document.createElement('span');
-      if (ch === ' ') {
-        span.className = 'v2-sp';
-      } else {
+    for (var w = 0; w < words.length; w++) {
+      var word = document.createElement('span');
+      word.className = 'v2-word';
+      for (var i = 0; i < words[w].length; i++) {
+        var span = document.createElement('span');
         span.className = 'v2-char';
         span.style.setProperty('--ci', ci);
-        span.textContent = ch;
+        span.textContent = words[w][i];
+        word.appendChild(span);
         ci++;
       }
-      h1.appendChild(span);
+      h1.appendChild(word);
+      if (w < words.length - 1) { h1.appendChild(document.createTextNode(' ')); }
     }
   }
   /* Parallax images au scroll */
@@ -2431,22 +2501,20 @@ html, body {
     btn.classList.toggle('visible', !!location.hash && location.hash.indexOf('v3-') !== -1);
   }
   window.addEventListener('hashchange', update);
-  btn.addEventListener('click', function(ev) {
-    ev.preventDefault();
-    // Force :target à se libérer : navigation vers ancre invalide puis nettoyage URL
+  btn.addEventListener('click', function() {
     location.hash = '__lb_close__';
-    setTimeout(function() {
-      if (history.replaceState) {
-        history.replaceState('', '', location.pathname + location.search);
-      } else {
-        location.hash = '';
-      }
-    }, 0);
+    if (history.replaceState) history.replaceState('', '', location.pathname + location.search);
     btn.classList.remove('visible');
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && location.hash && location.hash.indexOf('v3-') !== -1) {
+      location.hash = '__lb_close__';
+      if (history.replaceState) history.replaceState('', '', location.pathname + location.search);
+      btn.classList.remove('visible');
+    }
   });
   update();
 })();
-</script><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button><button class="js-lb-close" aria-label="Fermer">×</button>
-
-
-</body></html>
+</script>
+</body>
+</html>
